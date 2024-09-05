@@ -1,0 +1,155 @@
+---
+import NavbarLink from "../buttons/NavbarLink.astro";
+import NavbarDropdownLink from "../buttons/NavbarDropdownLink.astro";
+---
+
+<!-- Full width with dropdown -->
+<nav id="navbar" class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 top-0 w-full">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <img
+            src="./public/img/logo-corto-recortado.png"
+            class="h-10"
+            alt="Logo del proyecto Rosario360"
+            loading="lazy"
+        />
+        <button
+            data-collapse-toggle="navbar-dropdown"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-dropdown"
+            aria-expanded="false"
+        >
+            <i class="fa-solid fa-bars text-2xl text-gray-800"></i>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+            <ul
+                class="flex flex-col font-semibold p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <NavbarLink href="/" body="Inicio" />
+                </li>
+                <!-- Toggle dropdown -->
+                <li>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 rounded text-gray-700 transition-colors duration-200 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-600 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent relative">
+                        Asociados<i class="fa-solid fa-chevron-down ml-2 text-md"></i>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar"
+                        class="z-10 hidden font-normal absolute transform translate-x-[-1rem] bg-white divide-y divide-gray-100 rounded-lg shadow w-36 dark:bg-gray-700 dark:divide-gray-600">
+                        <ul
+                            class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                            aria-labelledby="dropdownLargeButton"
+                        >
+                            <li>
+                                <NavbarDropdownLink href="#" body="SENA" />
+                            </li>
+                            <li>
+                                <NavbarDropdownLink href="#" body="AgroVilla" />
+                            </li>
+                            <li>
+                                <NavbarDropdownLink href="#" body="Villa Gourmet" />
+                            </li>
+                            <li>
+                                <NavbarDropdownLink href="#" body="Villa Empress" />
+                            </li>
+                        </ul>
+                        <div class="py-1">
+                            <a
+                                href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                                >Registrarse</a
+                            >
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <NavbarLink href="/services" body="Servicios" />
+                </li>
+                <li>
+                    <NavbarLink href="/about" body="Nosotros" />
+                </li>
+                <li>
+                    <NavbarLink href="/contact" body="Contáctanos" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Sticky Navbar -->
+<script>
+    function makeNavbarSticky() {
+    const navbar = document.getElementById("navbar") as HTMLElement;
+    const sticky = navbar.offsetTop + 200;
+
+    function updateNavbar() {
+        if (window.scrollY >= sticky) {
+        navbar.classList.add('sticky');
+        } else {
+        navbar.classList.remove('sticky');
+        }
+    }
+
+    window.addEventListener('scroll', updateNavbar);
+    }
+    makeNavbarSticky();
+</script>
+
+<!-- Navbar Colors -->
+<script>
+    function updateNavLinks() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('text-green-600');
+            } else {
+                link.classList.remove('text-green-600');
+            }
+        });
+
+        window.addEventListener('popstate', updateNavLinks);
+    };
+    updateNavLinks();
+</script>
+
+<!-- Dropdown Animation -->
+<script>
+    const dropdownNavbar = document.getElementById("dropdownNavbar") as HTMLElement;
+    const dropdownNavbarLink = document.getElementById("dropdownNavbarLink") as HTMLElement;
+
+    function closeDropdown() {
+        dropdownNavbar.classList.add("hidden");
+    }
+
+    dropdownNavbarLink.addEventListener("click", (event) => {
+        event.stopPropagation();
+        dropdownNavbar.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!dropdownNavbar.contains(event.target as Node) && 
+            !dropdownNavbarLink.contains(event.target as Node)) {
+            closeDropdown();
+        }
+    });
+</script>
+
+<!-- Sticky Navbar Animation Styles -->
+<style>
+	.sticky{
+        position: fixed;
+        box-shadow: 0 0 15px 0 #00000008;
+        z-index: 100;
+        transition: box-shadow 0.4s ease-in-out;
+        animation: fadeIn .75s ease-out both;
+    }
+        @keyframes fadeIn{
+            from{
+            transform: translateY(-100%);
+            }
+            to{
+            transform: translateY(0);
+            }
+        }
+</style>

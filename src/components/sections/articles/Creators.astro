@@ -1,0 +1,31 @@
+---
+import SectionContainer from "../../wrapper/SectionContainer.astro";
+
+const CREADORES = [
+    {
+        name: "Diego Ayala",
+        description: "Desarrollador Frontend y Backend en la Universidad de Rosario",
+        icon: "fa-rocket",
+    },
+    {
+        name: "Javier Ayala",
+        description: "Desarrollador Frontend especializado en la Universidad de Rosario",
+        icon: "fa-moon",
+    },
+    {
+        name: "Miguel Silva",
+        description: "Desarrollador Frontend en la Universidad de Cúcuta",
+        icon: "fa-sun",
+    },
+]
+---
+
+    {CREADORES.map(({ name, description, icon }) => (
+        <article class="flex flex-col items-center justify-center gap-4 p-4">
+            <i class={`fa-solid ${icon} text-6xl`}></i>
+            <div class="text-center">
+                <h3 class="text-2xl font-bold">{name}</h3>
+                <p class="text-xl">{description}</p>
+            </div>
+        </article> 
+    ))}
