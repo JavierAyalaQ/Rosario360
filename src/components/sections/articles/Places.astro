@@ -1,0 +1,30 @@
+---
+import PlaceCard from "../../cards/PlaceCard.astro";
+
+
+const PLACES = [
+    {
+        name: "Villa del Rosario",
+        description: "La ciudad más hermosa del área metropolitana de Cúcuta",
+        image: "https://images.unsplash.com/photo-1724414826260-b4312c3af2c9?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    },
+    {
+        name: "Parque de la Independencia",
+        description: "Parque de la Independencia",
+        image: "https://images.unsplash.com/photo-1622050956578-94fd044a0ada?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    },
+    {
+        name: "Monumento histórico",
+        description: "Parque de la Independencia",
+        image: "https://images.unsplash.com/photo-1724745599021-e811fc679daa?q=80&w=1328&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    },
+]
+---
+
+
+    {PLACES.map(({ name, description, image, href }) => (
+        <PlaceCard name={name} description={description} image={image} href={href} />
+    ))}

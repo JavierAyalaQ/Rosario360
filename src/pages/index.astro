@@ -4,6 +4,7 @@ import Header from "../components/sections/Header.astro";
 import Creators from "../components/sections/articles/Creators.astro";
 import SectionContainer from "../components/wrappers/SectionContainer.astro";
 import Container from "../components/wrappers/Container.astro";
+import Places from "../components/sections/articles/Places.astro";
 
 
 ---
@@ -12,7 +13,10 @@ import Container from "../components/wrappers/Container.astro";
 	<Container>
 		<Header />
 	</Container>
-	<SectionContainer>
+	<SectionContainer classList="grid grid-cols-2 lg:grid-cols-3 gap-4 pt-32 justify-center items-start mx-auto">
+		<Places />
+	</SectionContainer>
+	<SectionContainer classList="flex flex-col md:flex-row md:justify-evenly flex-wrap items-center justify-center gap-4 pt-32 pb-32">
 		<Creators />
 	</SectionContainer>
 </Layout>
