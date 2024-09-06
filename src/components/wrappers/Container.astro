@@ -1,10 +1,11 @@
 ---
 interface Props {
     classList?: string;
+    id?: string;
 }
-const { classList } = Astro.props;
+const { classList, id } = Astro.props;
 ---
 
-<div class={`max-w-screen-xl mx-auto px-4 ${Astro.props.classList}`}>
+<div id={`${id}`} class={`max-w-screen-xl mx-auto px-4 ${Astro.props.classList}`}>
     <slot />
 </div>
