@@ -1,5 +1,7 @@
 ---
-const CREADORES = [
+import SectionContainer from "../../wrappers/SectionContainer.astro"
+
+const CREATORS = [
     {
         name: "Diego Ayala",
         description: "Desarrollador Frontend y Backend en la Universidad de Rosario",
@@ -18,7 +20,8 @@ const CREADORES = [
 ]
 ---
 
-    {CREADORES.map(({ name, description, icon }) => (
+<SectionContainer classList="flex flex-col md:flex-row md:justify-evenly flex-wrap items-center justify-center gap-4 py-32">
+    {CREATORS.map(({ name, description, icon }) => (
         <article class="flex flex-col items-center justify-center gap-4 p-4 max-w-[30ch]">
             <i class={`fa-solid ${icon} text-6xl`}></i>
             <div class="text-center">
@@ -27,3 +30,4 @@ const CREADORES = [
             </div>
         </article>
     ))}
+</SectionContainer>

@@ -1,30 +1,101 @@
 ---
 import PlaceCard from "../../cards/PlaceCard.astro";
-
+import Container from "../../wrappers/Container.astro";
+import SectionContainer from "../../wrappers/SectionContainer.astro";
+import TitleH2 from "../TitleH2.astro";
 
 const PLACES = [
     {
-        name: "Villa del Rosario",
-        description: "La ciudad más hermosa del área metropolitana de Cúcuta",
+        name: "Casa Natal del General Francisco de Paula Santander",
+        description: "Residencia del General Norsantandereano, reconocida por la Ley 164 de 1959",
         image: "https://images.unsplash.com/photo-1724414826260-b4312c3af2c9?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         href: "#",
     },
     {
-        name: "Parque de la Independencia",
-        description: "Parque de la Independencia",
+        name: "Parroquia Nuestra Señora del Rosario",
+        description: "Conocida también como Templo Parroquial de la Villa del Rosario de Cúcuta",
         image: "https://images.unsplash.com/photo-1622050956578-94fd044a0ada?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         href: "#",
     },
     {
-        name: "Monumento histórico",
-        description: "Parque de la Independencia",
+        name: "La Bagatela",
+        description: "Este sitio es conocido por ser donde ser firmó el acta de independencia",
+        image: "https://plus.unsplash.com/premium_photo-1677790360376-7db23e438b64?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    },
+    {
+        name: "La estación del Ferrocarril de Cúcuta La Frontera",
+        description: "",
+        image: "https://images.unsplash.com/photo-1622050956578-94fd044a0ada?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    },
+    {
+        name: "Ruinas de la capilla de Santa Ana",
+        description: "",
+        image: "https://images.unsplash.com/photo-1622050956578-94fd044a0ada?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    },
+    {
+        name: "Templo histórico",
+        description: "",
+        image: "https://images.unsplash.com/photo-1622050956578-94fd044a0ada?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    },
+    {
+        name: "Casa de la Cultura",
+        description: "",
+        image: "https://images.unsplash.com/photo-1622050956578-94fd044a0ada?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    },
+    {
+        name: "Colegio Manuel Antonio Rueda",
+        description: "",
+        image: "https://images.unsplash.com/photo-1622050956578-94fd044a0ada?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    },
+    {
+        name: "Tamarindo Histórico",
+        description: "",
+        image: "https://images.unsplash.com/photo-1622050956578-94fd044a0ada?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    },
+    {
+        name: "Centro de Convivencia ciudadana",
+        description: "",
+        image: "https://images.unsplash.com/photo-1622050956578-94fd044a0ada?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    },
+    {
+        name: "El sector urbano de Villa del Rosario",
+        description: "",
         image: "https://images.unsplash.com/photo-1724745599021-e811fc679daa?q=80&w=1328&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         href: "#",
     },
+    {
+        name: "Estatua del General Santander",
+        description: "",
+        image: "https://images.unsplash.com/photo-1622050956578-94fd044a0ada?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href: "#",
+    }
 ]
+
 ---
 
 
+
+<Container classList="flex flex-row justify-between">
+    <TitleH2 title="Bienes de Interés Cultural" />
+
+    <button id="expandButton"
+    class="grow-1 mt-24 mb-10 mr-8 text-2xl bg-red-700 px-4 py-2 rounded-lg text-white hover:bg-red-800 transition-colors duration-200 active:ring-4 active:ring-red-300">
+        Ver todo
+        <i class="fa-solid fa-chevron-down"></i>
+    </button>
+</Container>
+
+
+<SectionContainer classList="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-start mx-auto">
     {PLACES.map(({ name, description, image, href }) => (
         <PlaceCard name={name} description={description} image={image} href={href} />
     ))}
+</SectionContainer>
