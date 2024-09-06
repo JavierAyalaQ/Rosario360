@@ -1,0 +1,26 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    date: string;
+}
+const { title, description, date } = Astro.props;
+---
+
+<li>
+    <div class="flex-start flex items-center">
+      <div
+        class="-ms-[9px] -mt-2 me-3 flex h-4 w-4 items-center justify-center rounded-full bg-primary dark:bg-primary-500"></div>
+      <h4 class="-mt-2 text-xl font-semibold">{title}</h4>
+    </div>
+    <div class="mb-6 ms-6 pb-6">
+      <a
+        href="#!"
+        class="text-sm text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
+        >{date}</a
+      >
+      <p class="mb-4 mt-2 text-neutral-600 dark:text-neutral-300">
+        {description}
+      </p>
+    </div>
+  </li>
