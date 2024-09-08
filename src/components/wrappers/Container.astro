@@ -3,9 +3,9 @@ interface Props {
     classList?: string;
     id?: string;
 }
-const { classList, id } = Astro.props;
+const { classList='', id } = Astro.props;
 ---
 
-<div id={`${id}`} class={`max-w-screen-xl mx-auto px-4 ${Astro.props.classList}`}>
+<div {id} class={`max-w-screen-xl mx-auto px-4 ${classList}`}>
     <slot />
 </div>

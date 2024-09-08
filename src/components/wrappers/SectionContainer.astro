@@ -3,9 +3,9 @@ interface Props {
     classList?: string;
     id?: string;
 }   
-const { classList, id } = Astro.props;
+const { classList='' , id } = Astro.props;
 ---
 
-<section id={`${id}`} class={`max-w-screen-xl mx-auto px-4 ${classList}`}>
+<section {id} class={`max-w-screen-xl mx-auto px-4 ${classList}`}>
     <slot />
 </section>
