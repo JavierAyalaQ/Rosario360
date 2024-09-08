@@ -2,19 +2,27 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/sections/Header.astro";
 import Creators from "../components/sections/articles/Creators.astro";
-import Places from "../components/sections/articles/Places.astro";
-import Festivities from "../components/sections/articles/Festivities.astro";
+import PlacesR from "../components/sections/articles/PlacesR.jsx";
+import Typography from "../components/titles/Typography.astro";
 
 import Container from "../components/wrappers/Container.astro";
 
 ---
+
+<!-- TO-DO: Move section folder to src/sections/ -->
 
 <Layout title="Rosario360, Villa del Rosario desde sus sabores etc etc">
 	<Container>
 		<Header />
 	</Container>
 
-	<Places />
-	<Festivities />
+	<Container classList="my-32">
+		<Typography 
+			as="h1"
+			classList="text-center text-5xl font-bold text-red-800"
+			body="Rosario360, Villa del Rosario desde sus sabores, historia y hospitalidad"
+		/>
+	</Container>
+	<PlacesR />
 	<Creators />
 </Layout>

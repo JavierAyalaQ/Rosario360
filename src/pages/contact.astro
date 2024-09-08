@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/wrappers/SectionContainer.astro";
+
+import { Timeline } from "../components/sections/articles/Timeline.jsx";
+---
+
+<Layout title="Contáctanos">
+    <SectionContainer>
+        <Timeline client:load/>
+    </SectionContainer>
+</Layout>
