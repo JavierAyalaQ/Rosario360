@@ -1,0 +1,51 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Container from "../../components/wrappers/Container.astro";
+import placesData from "../../data/placesData.json";
+
+const { id } = Astro.params;
+/* 
+export function getStaticPaths() {
+    return placesData.map(({key}) => ({
+        params: { path: `BIC/${key}` },
+    }));
+}
+ */
+
+export function getStaticPaths() {
+    return [
+        { params: { id: "1" } },
+        { params: { id: "2" } },
+        { params: { id: "3" } },
+        { params: { id: "4" } },
+        { params: { id: "5" } },
+        { params: { id: "6" } },
+        { params: { id: "7" } },
+        { params: { id: "8" } },
+        { params: { id: "9" } },
+        { params: { id: "10" } },
+        { params: { id: "11" } },
+        { params: { id: "12" } },
+    ];
+}
+
+
+
+---
+
+<Layout title="Bienes de Interés Cultural">
+    <Container classList="my-32">
+        <h1 class="text-center text-5xl font-bold text-red-900">Bienes de Interés Cultural</h1>
+        <div class="mx-auto bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div>
+                <img src={placesData[Number(id)].image} alt="" class="max-w-full aspect-video rounded-sm object-cover h-64">
+            </div>
+            <div class="p-5">
+                <h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-neutral-100">
+                    {placesData[Number(id)].name}
+                </h2>
+                <p>{placesData[Number(id)].description}</p>
+            </div>
+        </div>
+    </Container>
+</Layout>
