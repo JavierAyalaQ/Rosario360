@@ -2,13 +2,16 @@
 interface Props {
     href?: string;
     body?: string;
+    targetBlank?: boolean;
 }
-const { href, body } = Astro.props;
+const { href, body, targetBlank } = Astro.props;
 ---
 
 
 
 <a href={`${href}`}
-    class="block px-4 py-2 text-gray-700 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-300 dark:hover:text-white">
+    class="block px-4 py-2 text-gray-700 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-300 dark:hover:text-white"
+    target={targetBlank ? "_blank" : "_self"}
+    >
     {body}
 </a>

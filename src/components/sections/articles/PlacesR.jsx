@@ -3,7 +3,7 @@ import placesData from "../../../data/placesData.json";
 import PlaceCardR from "../../cards/PlaceCardR.jsx";
 
 const PlacesR = () => {
-    const initialItems = 3;
+    const initialItems = 6;
     const [visibleItems, setVisibleItems] = useState(initialItems);
     const [isExpanded, setIsExpanded] = useState(false);
 

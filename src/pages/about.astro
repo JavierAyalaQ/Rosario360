@@ -1,19 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Creators from "../components/sections/articles/Creators.astro";
-import PlacesR from "../components/sections/articles/PlacesR.jsx";
 
 import Container from "../components/wrappers/Container.astro";
-import SectionContainer from "../components/wrappers/SectionContainer.astro";
 ---
 
 <Layout title="Sobre nosotros">
   <Container classList="my-32">
     <Creators />
   </Container>
-  <SectionContainer>
-    <PlacesR client:load />
-  </SectionContainer>
   <Container classList="my-32">
     <h2>¿Qué hacemos?</h2>
   </Container>
