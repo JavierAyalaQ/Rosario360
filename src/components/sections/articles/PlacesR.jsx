@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import placesData from "../../../data/placesData.json";
 import PlaceCardR from "../../cards/PlaceCardR.jsx";
 
