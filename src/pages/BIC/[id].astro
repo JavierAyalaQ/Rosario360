@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import Container from "../../components/wrappers/Container.astro";
 import placesData from "../../data/placesData.json";
 
-const { id } = Astro.params;
 /* 
 export function getStaticPaths() {
     return placesData.map(({key}) => ({
@@ -29,11 +28,10 @@ export function getStaticPaths() {
     ];
 }
 
-
-
+const { id } = Astro.params;
 ---
 
-<Layout title="Bienes de Interés Cultural">
+<Layout title={`${placesData[Number(id)].name} | Bienes de Interés Cultural`}>
     <Container classList="my-32">
         <h1 class="text-center text-5xl font-bold text-red-900">Bienes de Interés Cultural</h1>
         <div class="mx-auto bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">

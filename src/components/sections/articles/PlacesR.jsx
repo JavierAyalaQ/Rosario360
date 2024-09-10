@@ -45,7 +45,7 @@ const PlacesR = () => {
                         name={name}
                         description={description}
                         image={image}
-                        href={key}
+                        href={`/bic/${key}`}
                     />
                 ))}
             </div>
