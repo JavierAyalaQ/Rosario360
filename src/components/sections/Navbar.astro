@@ -8,12 +8,14 @@ import shortLogo from "./public/logo-corto-recortado.png";
 <!-- Full width with dropdown -->
 <nav id="navbar" class="bg-white border-gray-200 dark:bg-neutral-800 dark:border-gray-700 top-0 w-full">
     <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-        <img
-            src={shortLogo.src}
-            alt="Logo del proyecto Rosario360"
-            loading="lazy"
-            class="w-auto h-6 max-w-full"
-        />
+        <a href="/">
+            <img
+                src={shortLogo.src}
+                alt="Logo del proyecto Rosario360"
+                loading="lazy"
+                class="w-auto h-6 max-w-full"
+            />
+        </a>
         <button
             data-collapse-toggle="navbar-dropdown"
             type="button"
@@ -82,7 +84,7 @@ import shortLogo from "./public/logo-corto-recortado.png";
 <script>
     function makeNavbarSticky() {
     const navbar = document.getElementById("navbar") as HTMLElement;
-    const sticky = navbar.offsetTop + 200;
+    const sticky = navbar.offsetTop + 50;
 
     function updateNavbar() {
         if (window.scrollY >= sticky) {
@@ -100,7 +102,22 @@ import shortLogo from "./public/logo-corto-recortado.png";
 
 <!-- Hamburger Menu -->
 <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const navbarDropdownButton = document.querySelector('[data-collapse-toggle="navbar-dropdown"]') as HTMLElement;
+        const navbarDropdown = document.getElementById("navbar-dropdown") as HTMLElement;
 
+        if (navbarDropdownButton && navbarDropdown) {
+            navbarDropdownButton.addEventListener("click", () => {
+                navbarDropdown.classList.toggle("hidden");
+
+                if(navbarDropdownButton.getAttribute('aria-expanded') === 'false') {
+                    navbarDropdownButton.setAttribute('aria-expanded', 'true');
+                } else {
+                    navbarDropdownButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    });
 </script>
 
 
