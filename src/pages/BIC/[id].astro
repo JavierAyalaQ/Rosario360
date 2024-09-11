@@ -3,14 +3,16 @@ import Layout from "../../layouts/Layout.astro";
 import Container from "../../components/wrappers/Container.astro";
 import placesData from "../../data/placesData.json";
 
-/* 
 export function getStaticPaths() {
     return placesData.map(({key}) => ({
-        params: { path: `BIC/${key}` },
+        params: { id: `${key}` },
     }));
 }
- */
 
+const { id } = Astro.params;
+
+
+/* 
 export function getStaticPaths() {
     return [
         { params: { id: "1" } },
@@ -26,9 +28,9 @@ export function getStaticPaths() {
         { params: { id: "11" } },
         { params: { id: "12" } },
     ];
-}
+} 
+    */
 
-const { id } = Astro.params;
 ---
 
 <Layout title={`${placesData[Number(id)].name} | Bienes de Interés Cultural`}>
