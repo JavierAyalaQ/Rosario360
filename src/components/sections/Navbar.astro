@@ -6,8 +6,8 @@ import shortLogo from "./public/logo-corto-recortado.png";
 ---
 
 <!-- Full width with dropdown -->
-<nav id="navbar" class="bg-white border-gray-200 dark:bg-neutral-800 dark:border-gray-700 top-0 w-full">
-    <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+<nav id="navbar" class="top-0 w-full bg-white border-gray-200 dark:bg-neutral-800 dark:border-gray-700">
+    <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <a href="/">
             <img
                 src={shortLogo.src}
@@ -19,26 +19,26 @@ import shortLogo from "./public/logo-corto-recortado.png";
         <button
             data-collapse-toggle="navbar-dropdown"
             type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            class="inline-flex items-center justify-center w-10 h-10 p-2 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-dropdown"
             aria-expanded="false"
         >
-            <i class="fa-solid fa-bars text-2xl text-gray-800"></i>
+            <i class="text-2xl text-gray-800 fa-solid fa-bars"></i>
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
             <ul
-                class="flex flex-col font-semibold p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-inherit md:dark:bg-inherit dark:border-gray-700">
+                class="flex flex-col p-4 mt-4 font-semibold border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-inherit md:dark:bg-inherit dark:border-gray-700">
                 <li>
                     <NavbarLink href="/" body="Inicio" />
                 </li>
                 <!-- Toggle dropdown -->
                 <li>
-                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 rounded text-gray-700 transition-colors duration-200 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-600 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent relative">
-                        Asociados<i class="fa-solid fa-chevron-down ml-2 text-md"></i>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="relative flex items-center justify-between w-full px-3 py-2 text-gray-700 transition-colors duration-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-600 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                        Asociados<i class="ml-2 fa-solid fa-chevron-down text-md"></i>
                     </button>
                     <!-- Dropdown menu -->
                     <div id="dropdownNavbar"
-                        class="z-10 hidden font-normal absolute transform translate-x-[-1rem] bg-white divide-y divide-gray-100 rounded-lg shadow w-36 dark:bg-gray-700 dark:divide-gray-600">
+                        class="z-10 hidden font-normal absolute left-full right-full translate-x-[-11rem] transform md:translate-x-[-1rem] bg-white divide-y divide-gray-100 rounded-lg shadow w-36 dark:bg-gray-700 dark:divide-gray-600">
                         <ul
                             class="py-2 text-sm text-gray-700 dark:text-gray-400"
                             aria-labelledby="dropdownLargeButton"
@@ -127,16 +127,30 @@ import shortLogo from "./public/logo-corto-recortado.png";
         const currentPath = window.location.pathname;
         const navLinks = document.querySelectorAll('.nav-link');
         
+
+        // Mobile styling
         navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
+            if (link.getAttribute('href') === currentPath && window.innerWidth < 768) {
+                link.classList.add('bg-green-600');
+                link.classList.add('text-white');
+            } else {
+                link.classList.remove('bg-green-600');
+                link.classList.remove('text-white');
+            }
+        });
+
+        // Desktop styling
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath && window.innerWidth >= 768) {
                 link.classList.add('text-green-600');
             } else {
                 link.classList.remove('text-green-600');
             }
         });
-        window.addEventListener('popstate', updateNavLinks);
     };
     updateNavLinks();
+    window.addEventListener('popstate', updateNavLinks);
+    window.addEventListener('resize', updateNavLinks);
 </script>
 
 <!-- Dropdown Animation -->

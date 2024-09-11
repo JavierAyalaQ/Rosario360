@@ -6,7 +6,6 @@ import Container from "../components/wrappers/Container.astro"
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
 		<title>Error 404 - Página no encontrada</title> 
 
         
@@ -20,12 +19,12 @@ import Container from "../components/wrappers/Container.astro"
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
-	<body class="text-gray-800 bg-neutral-100 dark:bg-neutral-900 dark:text-neutral-100">
-        <main class="max-w-7xl px-4 m-auto h-screen grid place-content-center">
-            <img src="/public/img/logo-verde.png" alt="" class="max-w-full w-48 mx-auto">
+	<body class="text-gray-800 bg-neutral-100 dark:bg-neutral-900 dark:text-neutral-100 ">
+        <main class="grid h-screen px-4 m-auto max-w-7xl place-content-center">
+            <img src="/public/img/logo-verde.png" alt="" class="w-48 max-w-full mx-auto">
             <div class="flex flex-col items-center justify-center">
-                <h1 class="text-red-800 text-5xl font-bold">404</h1>
-                <p class="text-xl mt-4">Lo sentimos, la página que buscas no existe.</p>
+                <h1 class="text-5xl font-bold text-red-800">404</h1>
+                <p class="mt-4 text-xl">Lo sentimos, la página que buscas no existe.</p>
             </div>
         </main>
 	</body>

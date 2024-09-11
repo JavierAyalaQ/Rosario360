@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Container from "../../components/wrappers/Container.astro";
+import SectionContainer from "../../components/wrappers/SectionContainer.astro";
 import placesData from "../../data/placesData.json";
 
 export function getStaticPaths() {
@@ -34,18 +34,23 @@ export function getStaticPaths() {
 ---
 
 <Layout title={`${placesData[Number(id)].name} | Bienes de Interés Cultural`}>
-    <Container classList="my-32">
-        <h1 class="text-center text-5xl font-bold text-red-900">Bienes de Interés Cultural</h1>
-        <div class="mx-auto bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <div>
-                <img src={placesData[Number(id)].image} alt="" class="max-w-full aspect-video rounded-sm object-cover h-64">
-            </div>
+    <SectionContainer classList="px-12 my-32">
+        <h1 class="mb-12 text-5xl font-bold text-center text-red-900 dark:text-red-600">Bienes de Interés Cultural</h1>
+        <article class="mx-auto bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 md:grid md:grid-cols-2">
+            <figure class="overflow-hidden rounded-none rounded-t-lg md:rounded-none md:rounded-l-lg">
+                <img src={placesData[Number(id)].image} alt="" class="object-cover w-full h-auto rounded-sm aspect-video md:w-full md:h-full">
+            </figure>
             <div class="p-5">
                 <h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-neutral-100">
                     {placesData[Number(id)].name}
                 </h2>
                 <p>{placesData[Number(id)].description}</p>
             </div>
+        </article>
+        <div class="flex items-center justify-between px-12 mt-10">
+            <a href={`/bic/${(Number(id) - 1)}`}><i class="text-2xl text-gray-700 transition-colors hover:text-green-600 dark:hover:text-green-300 fa-solid fa-arrow-left dark:text-gray-300"></i></a>
+            <a href="/"><i class="text-2xl text-green-500 transition-colors dark:hover:text-green-300 fa-solid fa-home dark:text-gray-300"></i></a>
+            <a href={`/bic/${(Number(id) + 1)}`}><i class="text-2xl text-gray-700 transition-colors hover:text-green-600 dark:hover:text-green-300 fa-solid fa-arrow-right dark:text-gray-300"></i></a>
         </div>
-    </Container>
+    </SectionContainer>
 </Layout>
