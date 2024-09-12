@@ -5,7 +5,7 @@ import placesData from "../../data/placesData.json";
 
 export function getStaticPaths() {
     return placesData.map(({key}) => ({
-        params: { id: `${key}` },
+        params: { id: key },
     }));
 }
 
@@ -33,24 +33,34 @@ export function getStaticPaths() {
 
 ---
 
-<Layout title={`${placesData[Number(id)].name} | Bienes de Interés Cultural`}>
+<Layout title={`${placesData[id - 1].name} | Bienes de Interés Cultural`}>
     <SectionContainer classList="px-12 my-32">
         <h1 class="mb-12 text-5xl font-bold text-center text-red-900 dark:text-red-600">Bienes de Interés Cultural</h1>
         <article class="mx-auto bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 md:grid md:grid-cols-2">
             <figure class="overflow-hidden rounded-none rounded-t-lg md:rounded-none md:rounded-l-lg">
-                <img src={placesData[Number(id)].image} alt="" class="object-cover w-full h-auto rounded-sm aspect-video md:w-full md:h-full">
+                <img src={placesData[id - 1].image} alt="" class="object-cover w-full h-auto rounded-sm aspect-video md:w-full md:h-full" loading="lazy" transition:name="place-image">
             </figure>
             <div class="p-5">
                 <h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-neutral-100">
-                    {placesData[Number(id)].name}
+                    {placesData[id - 1].name}
                 </h2>
-                <p>{placesData[Number(id)].description}</p>
+                <p>{placesData[id - 1].description}</p>
             </div>
         </article>
-        <div class="flex items-center justify-between px-12 mt-10">
-            <a href={`/bic/${(Number(id) - 1)}`}><i class="text-2xl text-gray-700 transition-colors hover:text-green-600 dark:hover:text-green-300 fa-solid fa-arrow-left dark:text-gray-300"></i></a>
-            <a href="/"><i class="text-2xl text-green-500 transition-colors dark:hover:text-green-300 fa-solid fa-home dark:text-gray-300"></i></a>
-            <a href={`/bic/${(Number(id) + 1)}`}><i class="text-2xl text-gray-700 transition-colors hover:text-green-600 dark:hover:text-green-300 fa-solid fa-arrow-right dark:text-gray-300"></i></a>
+        <div class="grid grid-cols-3 items-center place-items-center px-12 mt-10 w-full">
+            <a href={`/bic/${Number(id) - 1}`} data-astro-prefetch=""
+            class={Number(id) > 1 ? 'transition-colors text-gray-900 dark:text-gray-300 hover:text-green-900 dark:hover:text-green-300' : 'pointer-events-none text-gray-300 dark:text-gray-600'}
+            >
+                <i class="text-2xl text-inherit fa-solid fa-arrow-left"></i>
+            </a>
+            <a href="/" data-astro-prefetch="">
+                <i class="text-2xl text-green-800 transition-colors dark:hover:text-green-300 fa-solid fa-home dark:text-gray-300"></i>
+            </a>
+            <a href={`/bic/${Number(id) + 1}`} data-astro-prefetch=""
+            class={Number(id) < placesData.length ? 'transition-colors text-gray-900 dark:text-gray-300 hover:text-green-900 dark:hover:text-green-300' : 'pointer-events-none text-gray-300 dark:text-gray-600'}
+            >
+                <i class="text-2xl text-inherit fa-solid fa-arrow-right"></i>
+            </a>
         </div>
     </SectionContainer>
 </Layout>
