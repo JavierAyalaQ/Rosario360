@@ -17,15 +17,15 @@ import shortLogo from "./public/logo-corto-recortado.png";
             />
         </a>
         <button
-            data-collapse-toggle="navbar-dropdown"
+            data-collapse-toggle="navbar-menu"
             type="button"
-            class="inline-flex items-center justify-center w-10 h-10 p-2 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-dropdown"
+            class="inline-flex items-center justify-center w-10 h-10 p-2 rounded-lg md:hidden  hover:bg-gray-100 outline-none ring-2 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-600"
+            aria-controls="navbar-menu"
             aria-expanded="false"
         >
             <i class="text-2xl text-gray-800 fa-solid fa-bars"></i>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+        <div class="hidden w-full md:block md:w-auto" id="navbar-menu">
             <ul
                 class="flex flex-col p-4 mt-4 font-semibold border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-inherit md:dark:bg-inherit dark:border-gray-700">
                 <li>
@@ -38,7 +38,7 @@ import shortLogo from "./public/logo-corto-recortado.png";
                     </button>
                     <!-- Dropdown menu -->
                     <div id="dropdownNavbar"
-                        class="z-10 hidden font-normal absolute left-full right-full translate-x-[-11rem] transform md:translate-x-[-1rem] bg-white divide-y divide-gray-100 rounded-lg shadow w-36 dark:bg-gray-700 dark:divide-gray-600">
+                        class="z-10 hidden font-normal absolute right-8 md:right-auto md:translate-x-[-1rem] bg-white divide-y divide-gray-100 rounded-lg shadow w-36 dark:bg-gray-700 dark:divide-gray-600">
                         <ul
                             class="py-2 text-sm text-gray-700 dark:text-gray-400"
                             aria-labelledby="dropdownLargeButton"
@@ -103,17 +103,17 @@ import shortLogo from "./public/logo-corto-recortado.png";
 <!-- Hamburger Menu -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const navbarDropdownButton = document.querySelector('[data-collapse-toggle="navbar-dropdown"]') as HTMLElement;
-        const navbarDropdown = document.getElementById("navbar-dropdown") as HTMLElement;
+        const navbarMenuButton = document.querySelector('[data-collapse-toggle="navbar-menu"]');
+        const navbarMenu = document.getElementById("navbar-menu");
 
-        if (navbarDropdownButton && navbarDropdown) {
-            navbarDropdownButton.addEventListener("click", () => {
-                navbarDropdown.classList.toggle("hidden");
+        if (navbarMenuButton && navbarMenu) {
+            navbarMenuButton.addEventListener("click", () => {
+                navbarMenu.classList.toggle("hidden");
 
-                if(navbarDropdownButton.getAttribute('aria-expanded') === 'false') {
-                    navbarDropdownButton.setAttribute('aria-expanded', 'true');
+                if(navbarMenuButton.getAttribute('aria-expanded') === 'false') {
+                    navbarMenuButton.setAttribute('aria-expanded', 'true');
                 } else {
-                    navbarDropdownButton.setAttribute('aria-expanded', 'false');
+                    navbarMenuButton.setAttribute('aria-expanded', 'false');
                 }
             });
         }
@@ -153,6 +153,7 @@ import shortLogo from "./public/logo-corto-recortado.png";
     window.addEventListener('resize', updateNavLinks);
 </script>
 
+
 <!-- Dropdown Animation -->
 <script>
     const dropdownNavbar = document.getElementById("dropdownNavbar") as HTMLElement;
@@ -176,18 +177,24 @@ import shortLogo from "./public/logo-corto-recortado.png";
             closeDropdown();
         }
     });
+    document.addEventListener("scroll", () => {
+        if(window.scrollY > 100) {
+            closeDropdown();
+        }
+    });
 </script>
+
 
 <!-- Sticky Navbar Animation Styles -->
 <style>
-	.sticky{
+	.sticky {
         position: fixed;
         box-shadow: 0 0 15px 0 #00000008;
         z-index: 100;
         transition: box-shadow 0.4s ease-in-out;
         animation: fadeIn .75s ease-out both;
     }
-        @keyframes fadeIn{
+        @keyframes fadeIn {
             from{
             transform: translateY(-100%);
             }

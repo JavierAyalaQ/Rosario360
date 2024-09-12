@@ -10,6 +10,7 @@ const PlaceCard = ({ name, description, image, href }) => {
                     className="rounded-t-lg object-cover max-w-full aspect-video"
                     src={image}
                     alt={`Fotografía de ${name}, ubicado en Villa del Rosario`}
+                    transition:name="place-image"
                 />
             </a>
             <div className="p-5">
