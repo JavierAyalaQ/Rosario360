@@ -9,8 +9,7 @@ const PlaceCard = ({ name, description, image, href }) => {
                 <img
                     className="rounded-t-lg object-cover max-w-full aspect-video"
                     src={image}
-                    alt={`Fotografía de ${name}, ubicado en Villa del Rosario`}
-                    transition:name="place-image"
+                    alt={`Fotografía de ${name}, uno de los Bienes de Interés Cultural ubicado en Villa del Rosario`}
                 />
             </a>
             <div className="p-5">
@@ -25,6 +24,7 @@ const PlaceCard = ({ name, description, image, href }) => {
                 <a
                     href={href}
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-600 rounded-lg transition-colors duration-200 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-500 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                    data-astro-prefetch=""
                 >
                     Ver más
                     <i className="fa-solid fa-arrow-right ml-2 text-sm"></i>

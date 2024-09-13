@@ -82,27 +82,29 @@ import shortLogo from "./public/logo-corto-recortado.png";
 
 <!-- Sticky Navbar -->
 <script>
-    function makeNavbarSticky() {
-    const navbar = document.getElementById("navbar") as HTMLElement;
-    const sticky = navbar.offsetTop + 50;
-
-    function updateNavbar() {
-        if (window.scrollY >= sticky) {
-        navbar.classList.add('sticky');
-        } else {
-        navbar.classList.remove('sticky');
+    document.addEventListener('astro:page-load', () => {
+        function makeNavbarSticky() {
+        const navbar = document.getElementById("navbar") as HTMLElement;
+        const sticky = navbar.offsetTop + 50;
+    
+        function updateNavbar() {
+            if (window.scrollY >= sticky) {
+            navbar.classList.add('sticky');
+            } else {
+            navbar.classList.remove('sticky');
+            }
         }
-    }
-
-    window.addEventListener('scroll', updateNavbar);
-    }
-    makeNavbarSticky();
+    
+        window.addEventListener('scroll', updateNavbar);
+        }
+        makeNavbarSticky();
+    });
 </script>
 
 
 <!-- Hamburger Menu -->
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener('astro:page-load', () => {
         const navbarMenuButton = document.querySelector('[data-collapse-toggle="navbar-menu"]');
         const navbarMenu = document.getElementById("navbar-menu");
 
@@ -123,65 +125,69 @@ import shortLogo from "./public/logo-corto-recortado.png";
 
 <!-- Navbar Colors -->
 <script>
-    function updateNavLinks() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-
-        // Mobile styling
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath && window.innerWidth < 768) {
-                link.classList.add('bg-green-600');
-                link.classList.add('text-white');
-            } else {
-                link.classList.remove('bg-green-600');
-                link.classList.remove('text-white');
-            }
-        });
-
-        // Desktop styling
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath && window.innerWidth >= 768) {
-                link.classList.add('text-green-600');
-            } else {
-                link.classList.remove('text-green-600');
-            }
-        });
-    };
-    updateNavLinks();
-    window.addEventListener('popstate', updateNavLinks);
-    window.addEventListener('resize', updateNavLinks);
+    document.addEventListener('astro:page-load', () => {
+        function updateNavLinks() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+    
+            // Mobile styling
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath && window.innerWidth < 768) {
+                    link.classList.add('bg-green-600');
+                    link.classList.add('text-white');
+                } else {
+                    link.classList.remove('bg-green-600');
+                    link.classList.remove('text-white');
+                }
+            });
+    
+            // Desktop styling
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath && window.innerWidth >= 768) {
+                    link.classList.add('text-green-600');
+                } else {
+                    link.classList.remove('text-green-600');
+                }
+            });
+        };
+        updateNavLinks();
+        window.addEventListener('popstate', updateNavLinks);
+        window.addEventListener('resize', updateNavLinks);
+    });
 </script>
 
 
 <!-- Dropdown Animation -->
 <script>
-    const dropdownNavbar = document.getElementById("dropdownNavbar") as HTMLElement;
-    const dropdownNavbarLink = document.getElementById("dropdownNavbarLink") as HTMLElement;
-
-    function closeDropdown() {
-        dropdownNavbar.classList.add("hidden");
-    }
-
-    function handleClick(){
-        dropdownNavbarLink.addEventListener("click", (event) => {
-            event.stopPropagation();
-            dropdownNavbar.classList.toggle("hidden");
+    document.addEventListener('astro:page-load', () => {
+        const dropdownNavbar = document.getElementById("dropdownNavbar") as HTMLElement;
+        const dropdownNavbarLink = document.getElementById("dropdownNavbarLink") as HTMLElement;
+    
+        function closeDropdown() {
+            dropdownNavbar.classList.add("hidden");
+        }
+    
+        function handleClick(){
+            dropdownNavbarLink.addEventListener("click", (event) => {
+                event.stopPropagation();
+                dropdownNavbar.classList.toggle("hidden");
+            });
+        };
+        handleClick();
+    
+        document.addEventListener("click", (event) => {
+            if (!dropdownNavbar.contains(event.target as Node) && 
+                !dropdownNavbarLink.contains(event.target as Node)) {
+                closeDropdown();
+            }
         });
-    };
-    handleClick();
-
-    document.addEventListener("click", (event) => {
-        if (!dropdownNavbar.contains(event.target as Node) && 
-            !dropdownNavbarLink.contains(event.target as Node)) {
-            closeDropdown();
-        }
-    });
-    document.addEventListener("scroll", () => {
-        if(window.scrollY > 100) {
-            closeDropdown();
-        }
-    });
+        document.addEventListener("scroll", () => {
+            if(window.scrollY > 100) {
+                closeDropdown();
+            }
+        });
+    })
 </script>
 
 

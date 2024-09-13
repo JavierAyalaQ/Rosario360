@@ -1,0 +1,18 @@
+---
+interface Props {
+    href: string;
+    icon: string;
+    classList?: string;
+}
+const { href, icon, classList } = Astro.props;
+---
+<a href={href} data-astro-prefetch=""
+    class={`border-gray-300 bg-gray-200 text-gray-500 hover:bg-gray-300 hover:text-gray-700  
+    dark:bg-gray-900 dark:text-gray-600 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-gray-900
+    aspect-square max-w-10 overflow-hidden rounded-md border-2 px-3 py-2 transition-colors flex items-center justify-center ${classList}`}
+>
+    <i class={`text-lg text-inherit fa-solid ${icon}`}></i>
+</a>
+
+
+<!-- https://docs.astro.build/en/tutorials/add-view-transitions/#update-scripts -->
