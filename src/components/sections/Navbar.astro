@@ -19,7 +19,7 @@ import shortLogo from "./public/logo-corto-recortado.png";
         <button
             data-collapse-toggle="navbar-menu"
             type="button"
-            class="inline-flex items-center justify-center w-10 h-10 p-2 rounded-lg md:hidden  hover:bg-gray-100 outline-none ring-2 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-600"
+            class="inline-flex items-center justify-center w-10 h-10 p-2 rounded-lg outline-none md:hidden hover:bg-gray-100 ring-2 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-600"
             aria-controls="navbar-menu"
             aria-expanded="false"
         >
@@ -33,7 +33,7 @@ import shortLogo from "./public/logo-corto-recortado.png";
                 </li>
                 <!-- Toggle dropdown -->
                 <li>
-                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="relative flex items-center justify-between w-full px-3 py-2 text-gray-700 transition-colors duration-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-600 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                    <button id="dropdownNavbarButton" data-dropdown-toggle="dropdownNavbar" class="relative flex items-center justify-between w-full px-3 py-2 text-gray-700 transition-colors duration-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-300 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
                         Asociados<i class="ml-2 fa-solid fa-chevron-down text-md"></i>
                     </button>
                     <!-- Dropdown menu -->
@@ -50,7 +50,7 @@ import shortLogo from "./public/logo-corto-recortado.png";
                                 <NavbarDropdownLink href="#" body="AgroVilla" />
                             </li>
                             <li>
-                                <NavbarDropdownLink href="#" body="Villa Gourmet" />
+                                <NavbarDropdownLink href="/associated/villa-gourmet" body="Villa Gourmet" /> 
                             </li>
                             <li>
                                 <NavbarDropdownLink href="#" body="Villa Empress" />
@@ -94,7 +94,6 @@ import shortLogo from "./public/logo-corto-recortado.png";
             navbar.classList.remove('sticky');
             }
         }
-    
         window.addEventListener('scroll', updateNavbar);
         }
         makeNavbarSticky();
@@ -146,8 +145,10 @@ import shortLogo from "./public/logo-corto-recortado.png";
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === currentPath && window.innerWidth >= 768) {
                     link.classList.add('text-green-600');
+                    link.classList.add('dark:text-green-300');
                 } else {
                     link.classList.remove('text-green-600');
+                    link.classList.remove('dark:text-green-300');
                 }
             });
         };
@@ -158,32 +159,28 @@ import shortLogo from "./public/logo-corto-recortado.png";
 </script>
 
 
-<!-- Dropdown Animation -->
+<!-- Dropdown Menu -->
 <script>
     document.addEventListener('astro:page-load', () => {
         const dropdownNavbar = document.getElementById("dropdownNavbar") as HTMLElement;
-        const dropdownNavbarLink = document.getElementById("dropdownNavbarLink") as HTMLElement;
-    
-        function closeDropdown() {
-            dropdownNavbar.classList.add("hidden");
-        }
-    
+        const dropdownNavbarButton = document.getElementById("dropdownNavbarButton") as HTMLElement;
+
         function handleClick(){
-            dropdownNavbarLink.addEventListener("click", (event) => {
+            dropdownNavbarButton.addEventListener("click", (event) => {
                 event.stopPropagation();
                 dropdownNavbar.classList.toggle("hidden");
             });
         };
         handleClick();
-    
+
+        // Close dropdown on click outside
+        function closeDropdown() {
+            dropdownNavbar.classList.add("hidden");
+        }
+
         document.addEventListener("click", (event) => {
             if (!dropdownNavbar.contains(event.target as Node) && 
-                !dropdownNavbarLink.contains(event.target as Node)) {
-                closeDropdown();
-            }
-        });
-        document.addEventListener("scroll", () => {
-            if(window.scrollY > 100) {
+                !dropdownNavbarButton.contains(event.target as Node)) {
                 closeDropdown();
             }
         });

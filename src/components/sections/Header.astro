@@ -1,12 +1,23 @@
 ---
-import Container from "../wrappers/Container.astro"
+import SectionContainer from "../wrappers/SectionContainer.astro"
 ---
 
-<Container>
-    <div class="bg-gray-100 dark:bg-gray-900 flex justify-center">
-        <video src="./vid/video-promo.mp4" loop muted controls class="w-full object-contain md:aspect-video">
-            Your browser does not support the video tag.
-        </video>
+<SectionContainer 
+    classList="flex flex-col items-center md:flex-row md:justify-between w-full bg-black md:max-h-[90dvh] overflow-hidden rounded-xl mt-2 mb-32 py-8 md:p-0"
+>
+    <div class="size-full m-auto p-8">
+        <h1 class="m-auto text-2xl md:text-4xl font-bold text-neutral-100">
+            <strong class="block text-3xl md:text-5xl uppercase">Villa del Rosario</strong>
+            desde sus sabores, historia y hospitalidad
+        </h1>
+        <p class="text-sm text-neutral-200">Hero Section Slider con los 3 videos + botones call to action</p>
     </div>
-</Container>
+    <figure class="flex max-w-[350px] bg-black">
+        <video src="./vid/video-promo.mp4" preload="auto" loop muted controls 
+            class="w-full h-full object-cover" aria-label="Video promocional de Villa del Rosario"
+        >Tu navegador no soporta el elemento de video.
+        </video>
+        <figcaption class="sr-only">Video promocional de Villa del Rosario.</figcaption>
+    </figure>
+</SectionContainer>
 

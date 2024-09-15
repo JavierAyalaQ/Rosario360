@@ -1,9 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
 import Header from "../components/sections/Header.astro";
-import Creators from "../components/sections/articles/Creators.astro";
+import Presentation from "../components/sections/Presentation.astro";
 import PlacesR from "../components/sections/articles/PlacesR.jsx";
-import Typography from "../components/titles/Typography.astro";
+
+import Creators from "../components/sections/articles/Creators.astro";
 
 import Container from "../components/wrappers/Container.astro";
 import SectionContainer from "../components/wrappers/SectionContainer.astro";
@@ -11,19 +13,11 @@ import SectionContainer from "../components/wrappers/SectionContainer.astro";
 
 <!-- TO-DO: Move section folder to src/sections/ -->
 
-<Layout title="Rosario360, Villa del Rosario desde sus sabores etc etc">
-	<Container>
-		<Header />
-	</Container>
-
-	<Container classList="my-32">
-		<Typography 
-			as="h1"
-			classList="text-center text-5xl font-bold text-red-800"
-			body="Rosario360, Villa del Rosario desde sus sabores, historia y hospitalidad"
-		/>
-	</Container>
-	<SectionContainer>
+<Layout title="Rosario360, Villa del Rosario desde sus sabores, historia y hospitalidad">
+	<Header />
+	<Presentation />
+	<SectionContainer classList="border-y border-neutral-900/10 dark:border-neutral-100/10">
+		<!-- Can't use astro component here inside jsx-->
 		<PlacesR client:load transition:persist />
 	</SectionContainer>
 	<Creators />

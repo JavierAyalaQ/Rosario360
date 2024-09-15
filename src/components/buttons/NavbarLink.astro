@@ -2,13 +2,12 @@
 interface Props {
     href?: string;
     body?: string;
-    active?: boolean;
 }
-const { href, body, active } = Astro.props;
+const { href, body } = Astro.props;
 ---
 
 <a href={`${href}`}
-    class="block px-3 py-2 text-gray-700 transition-colors duration-200 rounded md-text-gray-700 hover:bg-green-50 md:hover:bg-transparent md:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-green-600 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent nav-link "
+    class="block px-3 py-2 text-gray-700 transition-colors duration-200 rounded md-text-gray-700 hover:bg-green-50 md:hover:bg-transparent md:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 dark:text-white md:dark:hover:text-green-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent nav-link "
     data-astro-prefetch=""
 >
     {body}

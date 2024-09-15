@@ -27,21 +27,21 @@ const { id } = Astro.params;
                 </h2>
                 <p>{placesData[id - 1].description}</p>
                 <br>
-                <p><strong class="font-italic font-extralight">{placesData[id - 1].address}</strong></p>
+                <p><strong class="italic">{placesData[id - 1].address}</strong></p>
             </div>
         </article>
         <div class="grid items-center w-full grid-cols-3 px-8 mt-10 place-items-center">
             <IdIcon href={`/bic/${Number(id) - 1}`} 
                 icon="fa-arrow-left" 
                 classList={
-                    Number(id) > 1 ? '' : 'pointer-events-none opacity-50'}
+                    Number(id) > 1 ? '' : 'pointer-events-none opacity-[0.33]'}
             />
             <IdIcon href="/" icon="fa-home" classList="" 
             />
             <IdIcon href={`/bic/${Number(id) + 1}`} 
                 icon="fa-arrow-right" 
                 classList={
-                    Number(id) < placesData.length ? '' : 'pointer-events-none opacity-50'}
+                    Number(id) < placesData.length ? '' : 'pointer-events-none opacity-[0.33]'}
             />
         </div>
     </SectionContainer>

@@ -4,51 +4,70 @@ import Container from "../wrappers/Container.astro"
 
 
 <!-- Convert icons / titles to components -->
-<footer class="bg-neutral-100 dark:bg-neutral-900 text-center text-sm text-gray-600 dark:text-gray-400 dark:border-neutral-100/10 border-neutral-900/10 border-t">
+<footer class="text-sm text-center text-gray-600 border-t bg-neutral-100 dark:bg-neutral-900 dark:text-gray-400 dark:border-neutral-100/10 border-neutral-900/10">
     <Container classList="py-12 flex flex-col items-center justify-center">
-        <div class="flex justify-between items-center w-full">
-            <div class="flex flex-1">
-                <p class="pr-16">
+        <div class="flex flex-col md:flex-row items-center justify-between w-full gap-4">
+            <div class="flex flex-1 items-center justify-center">
+                <p class="md:pr-16">
                     Rosario360 es un proyecto dedicado a promocionar el turismo en el municipio de Villa del Rosario, llevado a cabo en su totalidad por estudiantes del SENA.
                 </p>
             </div>
-            <div class="flex-1 flex gap-6">
+            <div class="flex flex-1 gap-6">
                 <div class="flex flex-col items-center justify-center">
-                    <h5 class="font-bold text-base text-gray-800 dark:text-gray-200 mb-2">
+                    <h5 class="mb-2 text-base font-bold text-gray-800 dark:text-gray-200">
                         Redes Sociales
                     </h5>
                     <div class="flex flex-col items-center justify-center text-2xl">
-                        <a href="https://github.com/JavierAyalaQ/Rosario360" target="_blank" class="hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200">
+                        <a href="https://github.com/JavierAyalaQ/Rosario360" target="_blank" class="transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" target="_blank" class="hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200">
+                        <a href="#" target="_blank" class="transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" target="_blank" class="hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200">
+                        <a href="#" target="_blank" class="transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="flex flex-col items-center justify-center">
-                    <h5 class="font-bold text-base text-gray-800 dark:text-gray-200 mb-2">
+                    <h5 class="mb-2 text-base font-bold text-gray-800 dark:text-gray-200">
                         Nuestros Asociados
                     </h5>
                     <div class="flex flex-col items-center justify-center text-2xl">
-                        <a href="#" target="_blank" class="hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200">
+                        <a href="#" target="_blank" class="transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
                             <i class="fab fa-waze"></i>
                         </a>
-                        <a href="#" target="_blank" class="hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200">
+                        <a href="#" target="_blank" class="transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
                             <i class="fab fa-behance"></i>
                         </a>
-                        <a href="#" target="_blank" class="hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200">
+                        <a href="#" target="_blank" class="transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
+                            <i class="fab fa-accessible-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center">
+                    <h5 class="mb-2 text-base font-bold text-gray-800 dark:text-gray-200">
+                        Contácto
+                    </h5>
+                    <div class="flex flex-col items-center justify-center text-2xl">
+                        <a href="#" target="_blank" class="inline-flex items-center justify-center gap-1 transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
+                            <i class="text-sm fa-solid fa-envelope"></i>
+                            <span class="text-xs">rosario360@gmail.com</span>
+                        </a>
+                        <a href="#" target="_blank" class="inline-flex items-center justify-center gap-1 transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
+                            <i class="text-sm fab fa-whatsapp"></i>
+                            <span class="text-xs">+57 322 222 1100</span>
+                        </a>
+                        <a href="#" target="_blank" class="inline-flex items-center justify-center gap-1 transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
                             <i class="fab fa-accessible-icon"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <p class="text-xs mt-4">
+        <p class="mt-4 text-xs">
             &copy; Rosario360 {new Date().getFullYear()}    
         </p>
     </Container>

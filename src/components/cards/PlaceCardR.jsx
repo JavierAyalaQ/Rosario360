@@ -14,7 +14,9 @@ const PlaceCard = ({ name, description, image, href }) => {
             </a>
             <div className="p-5">
                 <a href={href}>
-                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-neutral-100">
+                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-neutral-100 md:truncate"
+                    title={name}
+                    >
                         {name}
                     </h5>
                 </a>
