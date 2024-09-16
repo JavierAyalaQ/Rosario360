@@ -9,6 +9,7 @@ import Creators from "../components/sections/articles/Creators.astro";
 
 import Container from "../components/wrappers/Container.astro";
 import SectionContainer from "../components/wrappers/SectionContainer.astro";
+import TitleH2 from "../components/titles/TitleH2.astro";
 ---
 
 <!-- TO-DO: Move section folder to src/sections/ -->
@@ -20,5 +21,133 @@ import SectionContainer from "../components/wrappers/SectionContainer.astro";
 		<!-- Can't use astro component here inside jsx-->
 		<PlacesR client:load transition:persist />
 	</SectionContainer>
+	
+<!-- Temporary Example Sections -->
+	<!-- Planes turísticos -->
+	<Container classList="my-32">
+		<TitleH2 title="Planes turísticos" />
+		<p>Esta sección podria usar bento grids</p>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-20">
+			<div>
+				<i class="fa-solid fa-route text-4xl mb-4"></i>
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque nulla, iusto, tenetur sequi dolorem quia voluptate nisi veniam ex velit voluptatibus magni vitae debitis pariatur accusamus enim itaque iste sed.</p>
+			</div>
+			<div>
+				<i class="fa-solid fa-road text-4xl mb-4"></i>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita itaque blanditiis, dolorum id dolores soluta eaque iusto unde ut tenetur enim voluptatibus aliquid molestias cupiditate similique, doloremque laboriosam. Non, dolores?</p>
+			</div>
+			<div>
+				<i class="fa-solid fa-house text-4xl mb-4"></i>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A accusamus consequatur necessitatibus voluptas ex quidem ipsam eum minima neque, explicabo, beatae officiis voluptatum ducimus veritatis non pariatur ut repellat nam!</p>
+			</div>
+		</div>
+	</Container>
+
+	<!-- Alojamientos -->
+	<Container classList="my-32">
+		<TitleH2 title="Donde alojarse" />
+		<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 my-12">
+			<div class="">
+				<img src="https://images.unsplash.com/photo-1658786839874-1d1b1b2435f2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="max-w-full object-cover aspect-square rounded">
+				<h5 class="text-xl font-semibold mt-6">
+					Hotel el tal
+				</h5>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+			</div>
+			<div class="">
+				<img src="https://images.unsplash.com/photo-1657774857961-172b7281d71b?q=80&w=1634&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="max-w-full object-cover aspect-square rounded">
+				<h5 class="text-xl font-semibold mt-6">
+					Hotel el hostal
+				</h5>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+			</div>
+			<div class="">
+				<img src="https://images.unsplash.com/photo-1504643039591-52948e3ddb47?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="max-w-full object-cover aspect-square rounded">
+				<h5 class="text-xl font-semibold mt-6">
+					Hotel el tal cual
+				</h5>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+			</div>
+			<div class="">
+				<img src="https://images.unsplash.com/photo-1515279831895-4a03671e5edf?q=80&w=1440&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="max-w-full object-cover aspect-square rounded">
+				<h5 class="text-xl font-semibold mt-6">
+					Motel no se qué
+				</h5>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+			</div>
+		</div>
+	</Container>
+
+	<!-- Historia y gastronomía -->
+	<Container classList="my-48">
+		<img src="https://images.unsplash.com/photo-1563668454696-170e01768e54?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+		<div class="grid md:grid-cols-2 gap-4 my-12">
+			<div class="">
+				<h4 class="text-4xl font-bold text-red-600">Historia</h4>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus provident dignissimos tenetur libero sed perferendis harum explicabo repellat. Adipisci explicabo aut consequuntur corporis quae praesentium temporibus labore sunt commodi iusto?</p>
+			</div>
+			<div class="">
+				<h4 class="text-4xl font-bold text-red-600">Gastronomía</h4>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt vel nulla magnam nam quidem facilis repudiandae, est, beatae corrupti nesciunt aperiam ad. Eius ex aut magni voluptatem quisquam unde fugiat!</p>
+			</div>
+		</div>
+	</Container>
+
+	<!-- Blog/testimonios/redes -->
+	<Container classList="my-32">
+		<TitleH2 title="Conoce las últimas noticias" />
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
+			<div class="bg-white rounded-xl p-4 shadow-md">
+				<div class="aspect-video p-4">
+					<img src="https://plus.unsplash.com/premium_photo-1692608746931-e9a2353affa9?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="object-cover rounded-md w-full h-full">
+				</div>
+				<div class="p-4 pt-0">
+					<span class="bg-blue-400 text-blue-950 text-xs font-semibold px-3 py-1 rounded-xl">Artículo</span>
+					<h5 class="mt-4 text-md font-semibold">
+						Se aproxima la feria de la Virgen de la Candelaria
+					</h5>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+				</div>
+			</div>
+			<div class="bg-white rounded-xl p-4 shadow-md">
+				<div class="aspect-video p-4">
+					<img src="https://plus.unsplash.com/premium_photo-1686529896385-8a8d581d0225?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="object-cover rounded-md w-full h-full">
+				</div>
+				<div class="p-4 pt-0">
+					<span class="bg-blue-400 text-blue-950 text-xs font-semibold px-3 py-1 rounded-xl">Artículo</span>
+					<h5 class="mt-4 text-md font-semibold">
+						Este fin de semana se celebró la cuarta venta agropecuaria
+					</h5>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+				</div>
+			</div>
+			<div class="bg-white rounded-xl p-4 shadow-md">
+				<div class="aspect-video p-4">
+					<img src="https://images.unsplash.com/photo-1601737317921-1c5fe2e34431?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="object-cover rounded-md w-full h-full">
+				</div>
+				<div class="p-4 pt-0">
+					<span class="bg-blue-400 text-blue-950 text-xs font-semibold px-3 py-1 rounded-xl">Artículo</span>
+					<h5 class="mt-4 text-md font-semibold">
+						Conozca la historia de Rodolfo José Cáceres, escritor y poeta Rosariense
+					</h5>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+				</div>
+			</div>
+		</div>
+		<div class="grid place-content-center">
+			<button class="bg-yellow-200 text-yellow-950 font-semibold px-4 py-2 rounded mt-12 hover:bg-yellow-500 transition-colors ">
+				Visitar el blog
+				<i class="fa-solid fa-arrow-right"></i>
+			</button>
+		</div>
+	</Container>
+
+	<!-- Mapa -->
+	<Container classList="my-32">
+		<TitleH2 title="Sección de mapa" />
+		<div class="grid place-content-center mt-12">
+			<img src="https://images.unsplash.com/photo-1582909184886-fad4767f7bdc?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="w-full h-full object-cover">
+		</div>
+	</Container>
 	<Creators />
 </Layout>
