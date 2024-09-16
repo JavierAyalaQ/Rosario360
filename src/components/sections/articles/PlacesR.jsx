@@ -22,7 +22,7 @@ const PlacesR = () => {
     return (
         <>
             <div className="flex flex-col">
-                <h2 className="text-3xl xl:text-5xl font-bold text-green-950 dark:text-green-600 ml-8 mt-12 mb-6" >
+                <h2 className="text-3xl xl:text-5xl font-bold text-green-950 dark:text-green-600 ml-8 mt-32 mb-6" >
                     Bienes de Interés Cultural
                 </h2>
                 <p className="text-xl">
@@ -44,7 +44,7 @@ const PlacesR = () => {
                     />
                 ))}
             </div>
-            <div className="flex items-center justify-center w-full mx-auto my-12">
+            <div className="flex items-center justify-center w-full mx-auto mt-20 mb-32">
                 <button
                     onClick={loadMoreItems}
                     className="flex items-center px-4 py-2 text-sm font-medium text-center text-white transition-colors duration-200 bg-red-700 rounded-lg hover:bg-red-800 dark:bg-red-500 dark:hover:bg-red-600 w-max"

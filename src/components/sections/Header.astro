@@ -3,16 +3,16 @@ import SectionContainer from "../wrappers/SectionContainer.astro"
 ---
 
 <SectionContainer 
-    classList="flex flex-col items-center md:flex-row md:justify-between w-full bg-neutral-900 md:max-h-[90dvh] overflow-hidden rounded-xl mt-2 mb-32 py-8 md:p-0"
+    classList="flex flex-col items-center md:flex-row md:justify-between w-full bg-neutral-800 dark:bg-gray-800 md:max-h-[90dvh] overflow-hidden rounded-xl mt-2 mb-32 py-8 md:p-0"
 >
     <div class="size-full m-auto p-8">
-        <h1 class="m-auto text-2xl md:text-4xl font-bold text-neutral-100">
+        <h1 class="m-auto text-2xl md:text-4xl font-bold text-neutral-200">
             <strong class="block text-3xl md:text-5xl uppercase">Villa del Rosario</strong>
             desde sus sabores, historia y hospitalidad
         </h1>
-        <p class="text-sm text-neutral-100">Hero Section Slider con los 3 videos + botones call to action</p>
+        <p class="text-sm text-neutral-200">Hero Section Slider con los 3 videos + botones call to action</p>
     </div>
-    <figure class="flex max-w-[350px] bg-neutral-900">
+    <figure class="flex max-w-[350px] bg-neutral-900 dark:bg-gray-800">
         <video src="./vid/video-promo.mp4" preload="auto" loop muted controls playsinline 
             class="w-full h-full object-cover brightness-75 contrast-125 saturate-[2] " aria-label="Video promocional de Villa del Rosario"
         >Tu navegador no soporta el elemento de video.
@@ -20,4 +20,3 @@ import SectionContainer from "../wrappers/SectionContainer.astro"
         <figcaption class="sr-only">Video promocional de Villa del Rosario.</figcaption>
     </figure>
 </SectionContainer>
-
