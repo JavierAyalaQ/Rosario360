@@ -17,6 +17,38 @@ console.log(getFact);
 ---
 
 <Layout title="API Test">
+
+    <Container classList="my-32 bg-gray-700">
+        <section class="relative h-screen overflow-hidden ">
+            <!-- Slider Container -->
+            <div class="relative w-full h-full">
+                <!-- Slider Videos -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <video class="hero-video" src="./vid/video-promo.mp4" autoplay loop muted ></video>
+                    <video class="hero-video hidden" src="./vid/video-sra.mp4" autoplay loop muted ></video>
+                    <video class="hero-video hidden" src="./vid/video-sr.mp4" autoplay loop muted ></video>
+                </div>
+        
+                <!-- Text Overlay -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-2">VILLA DEL ROSARIO</h1>
+                    <p class="text-lg md:text-xl mb-4">desde sus sabores, historia y hospitalidad</p>
+                    <div class="flex gap-4">
+                    <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600">Empezar ahora</button>
+                    <button class="bg-gray-700 text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-800">Saber más</button>
+                    </div>
+                </div>
+        
+                <!-- Slider Navigation (Optional) -->
+                <div class="absolute inset-x-0 bottom-0 flex justify-between p-4">
+                    <button id="prevBtn" class="bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700">&lt;</button>
+                    <button id="nextBtn" class="bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700">&gt;</button>
+                </div>
+            </div>
+        </section>
+    </Container>
+
+
     <Container classList="my-32">
         <h1 class="mx-auto text-4xl font-bold text-center">
             API Test with Catfact
@@ -28,3 +60,31 @@ console.log(getFact);
         </div>
     </Container>
 </Layout>
+
+
+<!-- Scripts -->
+<script>
+    let currentIndex = 0;
+    const videos = document.querySelectorAll('.hero-video') as NodeListOf<HTMLVideoElement>;
+    const prevBtn = document.getElementById('prevBtn') as HTMLButtonElement;
+    const nextBtn = document.getElementById('nextBtn') as HTMLButtonElement;
+    
+    function showVideo(index: number) {
+        videos.forEach((video, i) => {
+            video.classList.toggle('hidden', i !== index);
+        });
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : videos.length - 1;
+        showVideo(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex < videos.length - 1) ? currentIndex + 1 : 0;
+        showVideo(currentIndex);
+    });
+
+    // Initial video display
+    showVideo(currentIndex);
+</script>

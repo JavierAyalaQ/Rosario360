@@ -33,8 +33,10 @@ import shortLogo from "./public/logo-corto-recortado.png";
                 </li>
                 <!-- Toggle dropdown -->
                 <li>
-                    <button id="dropdownNavbarButton" data-dropdown-toggle="dropdownNavbar" class="relative flex items-center justify-between w-full px-3 py-2 text-gray-700 transition-colors duration-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-300 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
-                        Asociados<i class="ml-2 fa-solid fa-chevron-down text-md"></i>
+                    <button id="dropdownNavbarButton" data-dropdown-toggle="dropdownNavbar" class="relative flex items-center justify-between w-full px-3 py-2 text-gray-700 transition-colors duration-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-300 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                    >
+                        Asociados
+                        <i class="ml-2 fa-solid fa-chevron-down text-md"></i>
                     </button>
                     <!-- Dropdown menu -->
                     <div id="dropdownNavbar"
@@ -179,6 +181,12 @@ import shortLogo from "./public/logo-corto-recortado.png";
         }
 
         document.addEventListener("click", (event) => {
+            if (!dropdownNavbar.contains(event.target as Node) && 
+                !dropdownNavbarButton.contains(event.target as Node)) {
+                closeDropdown();
+            }
+        });
+        document.addEventListener("touchstart", (event) => {
             if (!dropdownNavbar.contains(event.target as Node) && 
                 !dropdownNavbarButton.contains(event.target as Node)) {
                 closeDropdown();
