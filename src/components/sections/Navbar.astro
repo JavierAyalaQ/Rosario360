@@ -6,7 +6,7 @@ import shortLogo from "./public/logo-corto-recortado.png";
 ---
 
 <!-- Full width with dropdown -->
-<nav id="navbar" class="top-0 w-full bg-white border-gray-200 dark:bg-neutral-800 dark:border-gray-700">
+<nav id="navbar" class="top-0 w-full bg-white border-b border-gray-200 dark:bg-neutral-800 dark:border-gray-700">
     <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <a href="/">
             <img
@@ -23,7 +23,7 @@ import shortLogo from "./public/logo-corto-recortado.png";
             aria-controls="navbar-menu"
             aria-expanded="false"
         >
-            <i class="text-2xl text-gray-800 fa-solid fa-bars"></i>
+            <i class="text-2xl text-gray-800 dark:text-gray-300 fa-solid fa-bars"></i>
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-menu">
             <ul
@@ -200,7 +200,7 @@ import shortLogo from "./public/logo-corto-recortado.png";
 <style>
 	.sticky {
         position: fixed;
-        box-shadow: 0 0 15px 0 #00000008;
+        box-shadow: 0 0 20px 0 #0000001a;
         z-index: 100;
         transition: box-shadow 0.4s ease-in-out;
         animation: fadeIn .75s ease-out both;

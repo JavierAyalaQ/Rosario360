@@ -81,38 +81,47 @@ import TitleH2 from "../components/titles/TitleH2.astro";
 	<Container classList="my-32 border-t border-neutral-900/10 dark:border-neutral-100/10">
 		<TitleH2 title="Donde alojarse" classList="mt-32"/>
 		<p>Esta sección podria usar bento grids</p>
-		<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 my-12">
-			<div class="">
-				<img src="https://images.unsplash.com/photo-1658786839874-1d1b1b2435f2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="max-w-full object-cover aspect-square rounded">
-				<h5 class="text-xl font-semibold mt-6">
-					Hotel el tal
-				</h5>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-12">
+			<div class="relative lg:col-span-1 aspect-square">
+				<img src="https://images.unsplash.com/photo-1658786839874-1d1b1b2435f2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="aspect-square lg:aspect-square max-w-full object-cover rounded">
+				<div class="absolute text-white bg-black/25 top-0 right-0 p-4">
+					<h5 class="text-xl font-semibold mt-6">
+						Hotel el tal
+					</h5>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+				</div>
 			</div>
-			<div class="">
-				<img src="https://images.unsplash.com/photo-1657774857961-172b7281d71b?q=80&w=1634&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="max-w-full object-cover aspect-square rounded">
-				<h5 class="text-xl font-semibold mt-6">
-					Hotel el hostal
-				</h5>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+			<div class="relative lg:col-span-2 aspect-[2/1]">
+				<img src="https://images.unsplash.com/photo-1657774857961-172b7281d71b?q=80&w=1634&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="aspect-square lg:aspect-[2/1] max-w-full object-cover rounded">
+				<div class="absolute text-white bg-black/25 top-0 right-0 p-4">
+					<h5 class="text-xl font-semibold mt-6">
+						Hotel el hostal
+					</h5>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+				</div>
 			</div>
-			<div class="">
-				<img src="https://images.unsplash.com/photo-1504643039591-52948e3ddb47?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="max-w-full object-cover aspect-square rounded">
-				<h5 class="text-xl font-semibold mt-6">
-					Hotel el tal cual
-				</h5>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+			<div class="relative lg:col-span-2">
+				<img src="https://images.unsplash.com/photo-1504643039591-52948e3ddb47?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="aspect-square lg:aspect-[2/1] max-w-full object-cover rounded">
+				<div class="absolute text-white bg-black/25 top-0 right-0 p-4">
+					<h5 class="text-xl font-semibold mt-6">
+						Hotel el tal cual
+					</h5>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+				</div>
 			</div>
-			<div class="">
-				<img src="https://images.unsplash.com/photo-1515279831895-4a03671e5edf?q=80&w=1440&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="max-w-full object-cover aspect-square rounded">
-				<h5 class="text-xl font-semibold mt-6">
-					Motel no se qué
-				</h5>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+			<div class="relative lg:col-span-1 aspect-square">
+				<img src="https://images.unsplash.com/photo-1515279831895-4a03671e5edf?q=80&w=1440&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="aspect-square lg:aspect-square max-w-full object-cover rounded">
+				<div class="absolute text-white bg-black/25 top-0 right-0 p-4">
+					<h5 class="text-xl font-semibold mt-6">
+						Motel no se qué
+					</h5>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+				</div>
 			</div>
 		</div>
 	</Container>
 
+	<!-- React -->
 	<SectionContainer classList="border-y border-neutral-900/10 dark:border-neutral-100/10">
 		<!-- Can't use astro component here inside jsx-->
 		<PlacesR client:load transition:persist />
@@ -142,7 +151,10 @@ import TitleH2 from "../components/titles/TitleH2.astro";
 					<img src="https://plus.unsplash.com/premium_photo-1692608746931-e9a2353affa9?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="object-cover rounded-md w-full h-full">
 				</div>
 				<div class="p-4 pt-0">
-					<span class="bg-blue-400 text-blue-950 text-xs font-semibold px-3 py-1 rounded-xl">Artículo</span>
+					<div class="flex justify-between items-center">
+						<span class="bg-blue-400 text-blue-950 text-xs font-semibold px-3 py-1 rounded-xl">Artículo</span>
+						<time class="text-xs font-light" datetime="2023-01-01">21 de Febrero 2024</time>
+					</div>
 					<h5 class="mt-4 text-md font-semibold">
 						Se aproxima la feria de la Virgen de la Candelaria
 					</h5>
@@ -154,7 +166,10 @@ import TitleH2 from "../components/titles/TitleH2.astro";
 					<img src="https://plus.unsplash.com/premium_photo-1686529896385-8a8d581d0225?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="object-cover rounded-md w-full h-full">
 				</div>
 				<div class="p-4 pt-0">
-					<span class="bg-blue-400 text-blue-950 text-xs font-semibold px-3 py-1 rounded-xl">Artículo</span>
+					<div class="flex justify-between items-center">
+						<span class="bg-blue-400 text-blue-950 text-xs font-semibold px-3 py-1 rounded-xl">Artículo</span>
+						<time class="text-xs font-light" datetime="2023-01-01">14 de Enero 2024</time>
+					</div>
 					<h5 class="mt-4 text-md font-semibold">
 						Este fin de semana se celebró la cuarta venta agropecuaria
 					</h5>
@@ -166,7 +181,10 @@ import TitleH2 from "../components/titles/TitleH2.astro";
 					<img src="https://images.unsplash.com/photo-1601737317921-1c5fe2e34431?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="object-cover rounded-md w-full h-full">
 				</div>
 				<div class="p-4 pt-0">
-					<span class="bg-green-400 text-green-950 text-xs font-semibold px-3 py-1 rounded-xl">Entrevista</span>
+					<div class="flex justify-between items-center">
+						<span class="bg-green-400 text-green-950 text-xs font-semibold px-3 py-1 rounded-xl">Entrevista</span>
+						<time class="text-xs font-light" datetime="2023-01-01">12 de Enero 2024</time>
+					</div>
 					<h5 class="mt-4 text-md font-semibold">
 						Conozca la historia de Rodolfo José Cáceres, escritor y poeta Rosariense
 					</h5>

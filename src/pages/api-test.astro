@@ -18,24 +18,29 @@ console.log(getFact);
 
 <Layout title="API Test">
 
-    <Container classList="my-32 bg-gray-700">
-        <section class="relative h-screen overflow-hidden ">
+    <Container classList="my-32">
+        <section class="relative h-screen overflow-hidden rounded-xl">
             <!-- Slider Container -->
             <div class="relative w-full h-full">
                 <!-- Slider Videos -->
                 <div class="absolute inset-0 flex items-center justify-center">
-                    <video class="hero-video" src="./vid/video-promo.mp4" autoplay loop muted ></video>
-                    <video class="hero-video hidden" src="./vid/video-sra.mp4" autoplay loop muted ></video>
-                    <video class="hero-video hidden" src="./vid/video-sr.mp4" autoplay loop muted ></video>
+                    <video class="hero-video" src="./vid/video-promo.mp4" loop muted ></video>
+                    <video class="hero-video hidden" src="./vid/video-sra.mp4" loop muted ></video>
+                    <video class="hero-video hidden" src="./vid/video-sr.mp4" loop muted ></video>
                 </div>
         
                 <!-- Text Overlay -->
                 <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white">
+                    <div class="flex absolute top-0 right-0 gap-8 p-8">
+                        <button id="playButton"><i class="fa-solid fa-play"></i></button>
+                        <button id="pauseButton"><i class="fa-solid fa-pause"></i></button>
+                        <button id="muteButton"><i class="fa-solid fa-volume-xmark"></i></button>
+                    </div>
                     <h1 class="text-3xl md:text-4xl font-bold mb-2">VILLA DEL ROSARIO</h1>
                     <p class="text-lg md:text-xl mb-4">desde sus sabores, historia y hospitalidad</p>
                     <div class="flex gap-4">
-                    <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600">Empezar ahora</button>
-                    <button class="bg-gray-700 text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-800">Saber más</button>
+                        <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition-colors">Empezar ahora</button>
+                        <button class="bg-gray-700 text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-800 dark:hover:bg-gray-500 transition-colors">Saber más</button>
                     </div>
                 </div>
         
@@ -68,12 +73,21 @@ console.log(getFact);
     const videos = document.querySelectorAll('.hero-video') as NodeListOf<HTMLVideoElement>;
     const prevBtn = document.getElementById('prevBtn') as HTMLButtonElement;
     const nextBtn = document.getElementById('nextBtn') as HTMLButtonElement;
-    
+
     function showVideo(index: number) {
-        videos.forEach((video, i) => {
-            video.classList.toggle('hidden', i !== index);
-        });
-    }
+    videos.forEach((video, i) => {
+        video.classList.toggle('hidden', i !== index);
+    });
+
+    clearTimeout((window as any).videoTimeout);
+    const currentVideo = videos[index] as HTMLVideoElement;
+    const videoDuration = currentVideo.duration * 1000;
+
+    (window as any).videoTimeout = setTimeout(() => {
+        currentIndex = (currentIndex < videos.length - 1) ? currentIndex + 1 : 0;
+        showVideo(currentIndex);
+    }, videoDuration);
+}
 
     prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex > 0) ? currentIndex - 1 : videos.length - 1;
@@ -85,6 +99,33 @@ console.log(getFact);
         showVideo(currentIndex);
     });
 
-    // Initial video display
     showVideo(currentIndex);
+
+    //configurar autoplay a cada video
+
+
+
+
+/* Control Buttons */
+    const playButton = document.getElementById('playButton') as HTMLElement;
+    const pauseButton = document.getElementById('pauseButton') as HTMLElement;
+    const muteButton = document.getElementById('muteButton') as HTMLElement;
+
+    playButton.addEventListener('click', () => {
+        videos.forEach((video) => {
+            video.play();
+        });
+    });
+
+    pauseButton.addEventListener('click', () => {
+        videos.forEach((video) => {
+            video.pause();
+        });
+    });
+
+    muteButton.addEventListener('click', () => {
+        videos.forEach((video) => {
+            video.muted = !video.muted;
+        });
+    });
 </script>
