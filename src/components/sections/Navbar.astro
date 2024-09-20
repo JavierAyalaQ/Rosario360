@@ -33,7 +33,7 @@ import shortLogo from "./public/logo-corto-recortado.png";
                 </li>
                 <!-- Toggle dropdown -->
                 <li>
-                    <button id="dropdownNavbarButton" data-dropdown-toggle="dropdownNavbar" class="relative flex items-center justify-between w-full px-3 py-2 text-gray-700 transition-colors duration-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-300 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                    <button id="dropdownNavbarButton" data-dropdown-toggle="dropdownNavbar" class="relative flex items-center justify-between w-full px-3 py-2 text-gray-700 transition-colors duration-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-300 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                     >
                         Asociados
                         <i class="ml-2 fa-solid fa-chevron-down text-md"></i>
@@ -119,6 +119,12 @@ import shortLogo from "./public/logo-corto-recortado.png";
                     navbarMenuButton.setAttribute('aria-expanded', 'false');
                 }
             });
+        document.addEventListener('click', (event) => {
+            if (!navbarMenu.contains(event.target as Node) && 
+                !navbarMenuButton.contains(event.target as Node)) {
+                navbarMenu.classList.add("hidden");
+            }
+        });
         }
     });
 </script>
@@ -135,10 +141,10 @@ import shortLogo from "./public/logo-corto-recortado.png";
             // Mobile styling
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === currentPath && window.innerWidth < 768) {
-                    link.classList.add('bg-green-600');
+                    link.classList.add('bg-green-700');
                     link.classList.add('text-white');
                 } else {
-                    link.classList.remove('bg-green-600');
+                    link.classList.remove('bg-green-700');
                     link.classList.remove('text-white');
                 }
             });
@@ -146,11 +152,11 @@ import shortLogo from "./public/logo-corto-recortado.png";
             // Desktop styling
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === currentPath && window.innerWidth >= 768) {
-                    link.classList.add('text-green-600');
-                    link.classList.add('dark:text-green-300');
+                    link.classList.add('md:text-green-700');
+                    link.classList.add('md:dark:text-green-300');
                 } else {
-                    link.classList.remove('text-green-600');
-                    link.classList.remove('dark:text-green-300');
+                    link.classList.remove('md:text-green-700');
+                    link.classList.remove('md:dark:text-green-300');
                 }
             });
         };
