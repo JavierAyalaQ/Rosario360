@@ -1,47 +1,62 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import SectionContainer from "../../components/wrappers/SectionContainer.astro";
+
 import placesData from "../../data/placesData.json";
 import IdIcon from "../../components/buttons/IdIcon.astro";
 
 
 export function getStaticPaths() {
+    const places = placesData;
     return placesData.map(({key}) => ({
         params: { id: key },
+        props: { places }
     }));
 }
 
 const { id } = Astro.params;
+const data = Astro.props;
+const { name, description, image, address } = data.places[id - 1];
 ---
 
-<Layout title={`${placesData[id - 1].name} | Bienes de Interés Cultural`}>
+<Layout title={`${name} | Bienes de Interés Cultural`}>
     <SectionContainer classList="px-12 my-32">
-        <h1 class="mb-12 text-5xl font-bold text-center text-red-900 dark:text-red-600">Bienes de Interés Cultural</h1>
+        <h1 class="mb-12 text-5xl font-bold text-center text-red-900 dark:text-red-600">
+            Bienes de Interés Cultural
+        </h1>
         <article class="mx-auto bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 md:grid md:grid-cols-2">
             <figure class="overflow-hidden rounded-none rounded-t-lg md:rounded-none md:rounded-l-lg">
-                <img src={placesData[id - 1].image} alt="" class="object-cover w-full h-auto rounded-sm aspect-video md:w-full md:h-full" loading="lazy">
+                <img 
+                    src={image} 
+                    alt={`Fotografía de ${name}`}
+                    class="object-cover w-full h-auto rounded-sm aspect-video md:w-full md:h-full" 
+                    loading="lazy"
+                    transition:name={`img-${id}`}
+                >
             </figure>
             <div class="p-5">
                 <h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-neutral-100">
-                    {placesData[id - 1].name}
+                    {name}
                 </h2>
-                <p>{placesData[id - 1].description}</p>
-                <br>
-                <p><strong class="italic">{placesData[id - 1].address}</strong></p>
+                <p>{description}</p>
+                { address && <p><strong class="italic">{address}</strong></p> }
             </div>
         </article>
         <div class="grid items-center w-full grid-cols-3 px-8 mt-10 place-items-center">
-            <IdIcon href={`/bic/${Number(id) - 1}`} 
+            <IdIcon 
+                href={`/bic/${Number(id) - 1}`} 
                 icon="fa-arrow-left" 
-                classList={
-                    Number(id) > 1 ? '' : 'pointer-events-none opacity-[0.33]'}
+                classList={Number(id) > 1 ? '' : 'pointer-events-none opacity-[0.33]'}
             />
-            <IdIcon href="/" icon="fa-home" classList="" 
+            <IdIcon 
+                href="/" 
+                icon="fa-home" 
+                classList="" 
             />
-            <IdIcon href={`/bic/${Number(id) + 1}`} 
+            <IdIcon 
+                href={`/bic/${Number(id) + 1}`} 
                 icon="fa-arrow-right" 
-                classList={
-                    Number(id) < placesData.length ? '' : 'pointer-events-none opacity-[0.33]'}
+                classList={Number(id) < placesData.length ? '' : 'pointer-events-none opacity-[0.33]'}
             />
         </div>
     </SectionContainer>

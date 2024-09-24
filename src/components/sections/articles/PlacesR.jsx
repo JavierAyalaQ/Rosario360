@@ -47,7 +47,7 @@ const PlacesR = () => {
             <div className="flex items-center justify-center w-full mx-auto mt-20 mb-32">
                 <button
                     onClick={loadMoreItems}
-                    className="flex items-center px-4 py-2 text-sm font-medium text-center text-white transition-colors duration-200 bg-red-700 rounded-lg hover:bg-red-800 dark:bg-red-500 dark:hover:bg-red-600 w-max"
+                    className="flex items-center px-6 py-3 text-xl font-semibold w-max transition-colors rounded outline-none focus:ring-4 ring-red-200 text-red-50 bg-red-600 hover:bg-red-800"
                 >
                     {isExpanded ? "Mostrar menos" : "Mostrar más"} 
                     &nbsp;
