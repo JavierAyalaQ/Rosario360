@@ -34,13 +34,13 @@ const PlacesR = () => {
                 </p>
             </div>
             <div className="grid items-start justify-center grid-cols-1 gap-8 mx-auto mt-12 sm:grid-cols-2 lg:grid-cols-3 md:gap-4">
-                {itemsToRender.map(({ key, name, description, image, href }) => (
+                {itemsToRender.map(({ key, slug, name, description, image, href }) => (
                     <PlaceCardR
                         key={key}
                         name={name}
                         description={description}
                         image={image}
-                        href={`/bic/${key}`}
+                        href={`/bic/${slug}`}
                     />
                 ))}
             </div>

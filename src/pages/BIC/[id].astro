@@ -1,22 +1,36 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import SectionContainer from "../../components/wrappers/SectionContainer.astro";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/wrappers/SectionContainer.astro";
 
-import placesData from "../../data/placesData.json";
-import IdIcon from "../../components/buttons/IdIcon.astro";
+import placesData from "@data/placesData.json";
+import NavigationIcon from "@components/buttons/NavigationIcon.astro";
 
 
 export function getStaticPaths() {
     const places = placesData;
-    return placesData.map(({key}) => ({
-        params: { id: key },
+    return placesData.map(({slug}) => ({
+        params: { id: slug },
         props: { places }
     }));
 }
 
 const { id } = Astro.params;
-const data = Astro.props;
-const { name, description, image, address } = data.places[id - 1];
+const place = placesData.find(p =>
+    p.slug === id
+);
+
+if (!place) {
+    throw new Error(`Lugar con Slug: ${id} no encontrado`);
+}
+const { key, name, description, image, address } = place;
+
+
+const currentIndex = placesData.findIndex(p => 
+    p.slug === id
+);
+
+const prevSlug = currentIndex > 0 ? placesData[currentIndex - 1].slug : null;
+const nextSlug = currentIndex < placesData.length - 1 ? placesData[currentIndex + 1].slug : null;
 ---
 
 <Layout title={`${name} | Bienes de Interés Cultural`}>
@@ -31,7 +45,7 @@ const { name, description, image, address } = data.places[id - 1];
                     alt={`Fotografía de ${name}`}
                     class="object-cover w-full h-auto rounded-sm aspect-video md:w-full md:h-full" 
                     loading="lazy"
-                    transition:name={`img-${id}`}
+                    transition:name={`bic-${key}`}
                 >
             </figure>
             <div class="p-5">
@@ -43,20 +57,20 @@ const { name, description, image, address } = data.places[id - 1];
             </div>
         </article>
         <div class="grid items-center w-full grid-cols-3 px-8 mt-10 place-items-center">
-            <IdIcon 
-                href={`/bic/${Number(id) - 1}`} 
+            <NavigationIcon 
+                href={prevSlug ? `/bic/${prevSlug}` : null}
                 icon="fa-arrow-left" 
-                classList={Number(id) > 1 ? '' : 'pointer-events-none opacity-[0.33]'}
+                classList={prevSlug ? '' : 'pointer-events-none opacity-[0.33]'} 
             />
-            <IdIcon 
-                href="/" 
+            <NavigationIcon 
+                href={`/`} 
                 icon="fa-home" 
                 classList="" 
             />
-            <IdIcon 
-                href={`/bic/${Number(id) + 1}`} 
+            <NavigationIcon 
+                href={nextSlug ? `/bic/${nextSlug}` : null}
                 icon="fa-arrow-right" 
-                classList={Number(id) < placesData.length ? '' : 'pointer-events-none opacity-[0.33]'}
+                classList={nextSlug ? '' : 'pointer-events-none opacity-[0.33]'} 
             />
         </div>
     </SectionContainer>

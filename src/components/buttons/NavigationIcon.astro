@@ -1,6 +1,6 @@
 ---
 interface Props {
-    href: string;
+    href: string | null;
     icon: string;
     classList?: string;
 }
@@ -13,6 +13,3 @@ const { href, icon, classList } = Astro.props;
 >
     <i class={`text-lg text-inherit fa-solid ${icon}`}></i>
 </a>
-
-
-<!-- https://docs.astro.build/en/tutorials/add-view-transitions/#update-scripts -->

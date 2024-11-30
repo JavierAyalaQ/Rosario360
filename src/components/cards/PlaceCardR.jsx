@@ -11,7 +11,7 @@ const PlaceCard = ({ key, name, description, image, href }) => {
                     className="rounded-t-lg object-cover max-w-full aspect-video"
                     src={image}
                     alt={`Fotografía de ${name}, uno de los Bienes de Interés Cultural ubicado en Villa del Rosario`}
-                    style={{ viewTransitionName: `img-${key}` }}
+                    style={{ viewTransitionName: `bic-${key}` }}
                 />
             </a>
             <div className="p-5">
@@ -30,7 +30,6 @@ const PlaceCard = ({ key, name, description, image, href }) => {
                     className="text-sm font-medium text-gray-600 transition-all hover:text-gray-900 dark:text-neutral-400 dark:hover:text-white
                     translate-x-6 ml-2"
                     data-astro-prefetch=""
-                    target="_blank"
                 >
                     Conocer mas
                     <i className="fa-solid fa-arrow-right ml-2"></i>
