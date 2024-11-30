@@ -1,6 +1,6 @@
 import { useState } from "react";
-import placesData from "../../../data/placesData.json";
-import PlaceCardR from "../../cards/PlaceCardR.jsx";
+import placesData from "@data/placesData.json";
+import PlaceCardR from "@components/cards/PlaceCardR.jsx";
 
 const PlacesR = () => {
     const initialItems = 6;

@@ -1,5 +1,5 @@
 ---
-import ViewTransitions from "astro/components/ViewTransitions.astro";
+import { ClientRouter } from "astro:transitions";
 import Footer from "../components/sections/Footer.astro";
 import Navbar from "../components/sections/Navbar.astro";
 
@@ -39,7 +39,7 @@ const { title, metaDescription } = Astro.props;
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
 		<!-- Icons -->
 		<link
@@ -54,7 +54,7 @@ const { title, metaDescription } = Astro.props;
 			referrerpolicy="no-referrer"
 		/>
 		<!-- Change to ClientRouter on Astro ^5.0.0 -->
-		<ViewTransitions />
+		<ClientRouter />
 	</head>
 
 	<body class="text-gray-800 bg-neutral-100 dark:bg-neutral-900 dark:text-neutral-100">
@@ -72,7 +72,7 @@ const { title, metaDescription } = Astro.props;
 
 <style is:global>
 	:root {
-		font-family: "Onest Variable", sans-serif;
+		font-family: "Inter", sans-serif;
 		color-scheme: light dark;
 	}
 </style>
