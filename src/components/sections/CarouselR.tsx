@@ -63,7 +63,7 @@ const VideoSlider: React.FC = () => {
   return (
     <div className="my-8 h-[720px] overflow-hidden rounded-xl relative w-full">
       {/* Slider Videos */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center  pointer-events-none">
         {videos.map((video, index) => (
           <video
             key={index}
