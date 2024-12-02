@@ -61,9 +61,9 @@ const VideoSlider: React.FC = () => {
   };
 
   return (
-    <div className="my-8 h-[720px] overflow-hidden rounded-xl relative w-full">
+    <div className="my-8 h-[720px] overflow-hidden rounded-xl relative">
       {/* Slider Videos */}
-      <div className="absolute inset-0 flex items-center justify-center  pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         {videos.map((video, index) => (
           <video
             key={index}
@@ -71,7 +71,7 @@ const VideoSlider: React.FC = () => {
             ref={(el) => (videoRefs.current[index] = el!)}
             loop
             muted={isMuted}
-            className={`hero-video brightness-50 contrast-125 saturate-[2] ${
+            className={`hero-video h-[720px] w-[405px] brightness-50 contrast-125 saturate-[2] ${ 
               index !== currentIndex ? "hidden" : ""
             }`}
           />
@@ -100,11 +100,11 @@ const VideoSlider: React.FC = () => {
         <p className="text-md md:text-xl mb-4 pointer-events-none">
           desde sus sabores, historia y hospitalidad
         </p>
-        <div className="flex-col md:flex-row gap-12 md:gap-6">
-          <a href="#" className="button">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-6">
+          <a href="#" className="button text-semibold bg-green-500 hover:bg-green-600 text-green-950 px-4 py-2 rounded transition-colors">
             Empezar ahora
           </a>
-          <a href="#" className="button bg-gray-700 hover:bg-gray-800">
+          <a href="#" className="button text-semibold bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded transition-colors">
             Conoce más
           </a>
         </div>
