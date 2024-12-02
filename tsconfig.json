@@ -9,8 +9,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@data/*": ["src/data/*"],
-      "@img/*": ["public/images/*"],
-      "@vid/*": ["public/videos/*"],
+      "@img/*": ["public/img/*"],
+      "@vid/*": ["public/vid/*"],
     }
   }
 }

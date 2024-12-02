@@ -3,21 +3,24 @@ import Layout from "@layouts/Layout.astro";
 
 import Header from "@components/sections/Header.astro";
 import Presentation from "@components/sections/Presentation.astro";
-import PlacesR from "@components/sections/articles/PlacesR.jsx";
+import PlacesR from "@components/sections/PlacesR.jsx";
+import Creators from "@components/sections/Creators.astro";
 
-import Creators from "@components/sections/articles/Creators.astro";
 
-import Container from "@components/wrappers/Container.astro";
 import SectionContainer from "@components/wrappers/SectionContainer.astro";
+
 import TitleH2 from "@components/texts/TitleH2.astro";
+import Carousel from "@components/sections/Carousel.astro";
 ---
 
 <Layout title="Rosario360, Villa del Rosario desde sus sabores, historia y hospitalidad">
-	<Header />
+	<Carousel />
+
+	<!-- Quote -->
 	<Presentation />
 	
 	<!-- Planes turísticos -->
-	<Container classList="my-32 border-t border-neutral-900/10 dark:border-neutral-100/10">
+	<SectionContainer classList="my-32 border-t border-neutral-900/10 dark:border-neutral-100/10">
 		<TitleH2 title="Planes turísticos" classList="mt-32" />
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
 				<div class="bg-white rounded-xl p-4 shadow-md dark:bg-gray-800">
@@ -73,10 +76,10 @@ import TitleH2 from "@components/texts/TitleH2.astro";
 				</div>
 			</div>
 		</div>
-	</Container>
+	</SectionContainer>
 
 	<!-- Alojamientos -->
-	<Container classList="my-32 border-t border-neutral-900/10 dark:border-neutral-100/10">
+	<SectionContainer classList="my-32 border-t border-neutral-900/10 dark:border-neutral-100/10">
 		<TitleH2 title="Donde alojarse" classList="mt-32"/>
 		<p>Esta sección podria usar bento grids</p>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-12">
@@ -117,7 +120,7 @@ import TitleH2 from "@components/texts/TitleH2.astro";
 				</div>
 			</div>
 		</div>
-	</Container>
+	</SectionContainer>
 
 	<!-- React -->
 	<SectionContainer classList="border-y border-neutral-900/10 dark:border-neutral-100/10">
@@ -126,7 +129,7 @@ import TitleH2 from "@components/texts/TitleH2.astro";
 	</SectionContainer>
 
 	<!-- Historia y gastronomía -->
-	<Container classList="my-32">
+	<SectionContainer classList="my-32">
 		<img src="https://images.unsplash.com/photo-1563668454696-170e01768e54?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
 		<div class="grid md:grid-cols-2 gap-4 my-12">
 			<div class="">
@@ -138,10 +141,10 @@ import TitleH2 from "@components/texts/TitleH2.astro";
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt vel nulla magnam nam quidem facilis repudiandae, est, beatae corrupti nesciunt aperiam ad. Eius ex aut magni voluptatem quisquam unde fugiat!</p>
 			</div>
 		</div>
-	</Container>
+	</SectionContainer>
 
 	<!-- Blog/testimonios/redes -->
-	<Container classList="my-32 border-y border-neutral-900/10 dark:border-neutral-100/10">
+	<SectionContainer classList="my-32 border-y border-neutral-900/10 dark:border-neutral-100/10">
 		<TitleH2 title="Últimas publicaciones" classList="mt-32"/>
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
 			<div class="bg-white rounded-xl p-4 shadow-md dark:bg-gray-800">
@@ -196,15 +199,15 @@ import TitleH2 from "@components/texts/TitleH2.astro";
 				<i class="fa-solid fa-arrow-right"></i>
 			</a>
 		</div>
-	</Container>
+	</SectionContainer>
 
 	<!-- Mapa -->
-	<Container classList="my-32">
+	<SectionContainer classList="my-32">
 		<TitleH2 title="Sección de mapa" />
 		<div class="grid place-content-center mt-12">
 			<img src="https://images.unsplash.com/photo-1582909184886-fad4767f7bdc?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="w-full h-full object-cover">
 		</div>
-	</Container>
+	</SectionContainer>
 
 	<!-- Creators -->
 	<Creators />

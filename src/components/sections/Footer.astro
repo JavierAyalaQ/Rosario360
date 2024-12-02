@@ -1,11 +1,11 @@
 ---
-import Container from "@components/wrappers/Container.astro"
+import SectionContainer from "@components/wrappers/SectionContainer.astro"
 ---
 
 
 <!-- Convert icons / titles to components -->
 <footer class="text-sm text-center text-gray-600 border-t bg-neutral-100 dark:bg-neutral-900 dark:text-gray-400 dark:border-neutral-100/10 border-neutral-900/10">
-    <Container classList="py-12 flex flex-col items-center justify-center">
+    <SectionContainer classList="py-12 flex flex-col items-center justify-center">
         <div class="flex flex-col md:flex-row items-center justify-between w-full gap-4">
             <div class="flex flex-1 items-center justify-center">
                 <p class="md:pr-16">
@@ -70,5 +70,5 @@ import Container from "@components/wrappers/Container.astro"
         <p class="mt-4 text-xs">
             &copy; Rosario360 {new Date().getFullYear()}    
         </p>
-    </Container>
+    </SectionContainer>
 </footer>
