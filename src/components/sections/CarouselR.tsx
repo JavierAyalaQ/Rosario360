@@ -78,17 +78,17 @@ const VideoSlider: React.FC = () => {
         ))}
 
         {/* Controls */}
-        <div className="flex absolute top-0 right-1/2 transform translate-x-1/2 gap-16 mt-4 p-8 text-2xl z-10 text-gray-200">
-          <button id="prevBtn" onClick={handlePrev} className="control-button">
+        <div className="flex absolute top-0 right-1/2 transform translate-x-1/2 gap-16 mt-4 p-8 text-2xl z-20 text-gray-200">
+          <button id="prevBtn" onClick={handlePrev} className="control-button pointer-events-auto">
             <i className="fa fa-chevron-left"></i>
           </button>
-          <button id="pauseButton" onClick={togglePause} className="control-button">
+          <button id="pauseButton" onClick={togglePause} className="control-button pointer-events-auto">
             <i className={`fa ${isPaused ? "fa-play" : "fa-pause"}`}></i>
           </button>
-          <button id="muteButton" onClick={toggleMute} className="control-button">
+          <button id="muteButton" onClick={toggleMute} className="control-button pointer-events-auto">
             <i className={`fa ${isMuted ? "fa-volume-xmark" : "fa-volume-high"}`}></i>
           </button>
-          <button id="nextBtn" onClick={handleNext} className="control-button">
+          <button id="nextBtn" onClick={handleNext} className="control-button pointer-events-auto">
             <i className="fa fa-chevron-right"></i>
           </button>
         </div>
