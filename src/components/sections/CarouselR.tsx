@@ -13,7 +13,6 @@ const VideoSlider: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
-  // Helper to play only the current video and mute/pause others
   const updateVideoStates = () => {
     videoRefs.current.forEach((video, index) => {
       if (video) {
@@ -23,7 +22,7 @@ const VideoSlider: React.FC = () => {
           else video.pause();
         } else {
           video.pause();
-          video.currentTime = 0; // Reset time for paused videos
+          video.currentTime = 0;
         }
       }
     });
@@ -32,9 +31,8 @@ const VideoSlider: React.FC = () => {
   useEffect(() => {
     updateVideoStates();
 
-    // Set up timeout for automatic video transitions
     const videoDuration =
-      videoRefs.current[currentIndex]?.duration * 1000 || 5000; // Fallback duration
+      videoRefs.current[currentIndex]?.duration * 1000 || 5000;
     const videoTimeout = setTimeout(() => {
       if (!isPaused) {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
@@ -49,7 +47,6 @@ const VideoSlider: React.FC = () => {
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => {
       const newIndex = (prevIndex - 1 + videos.length) % videos.length;
-      // Reset the currentTime of the previous video
       if (videoRefs.current[newIndex]) {
         videoRefs.current[newIndex].currentTime = 0;
       }
