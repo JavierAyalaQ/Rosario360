@@ -56,7 +56,7 @@ const { title, metaDescription } = Astro.props;
 		<ClientRouter />
 	</head>
 
-	<body class="text-gray-800 bg-neutral-100 dark:bg-neutral-900 dark:text-neutral-100 font-medium">
+	<body class="text-gray-800 bg-neutral-100 dark:bg-neutral-900 dark:text-neutral-100">
 		<Navbar />
 		<main>
 			<slot />
@@ -73,5 +73,8 @@ const { title, metaDescription } = Astro.props;
 	:root {
 		font-family: "Inter", sans-serif;
 		color-scheme: light dark;
+	}
+	strong {
+		font-weight: 600;
 	}
 </style>

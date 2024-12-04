@@ -7,37 +7,37 @@ import logo from "@img/logo.png"
 
 
 <footer class="text-sm text-center text-gray-600 border-t-2 bg-neutral-100 dark:bg-neutral-900 dark:text-gray-400 dark:border-neutral-100/10 border-neutral-900/10">
-    <SectionContainer classList="py-12 flex flex-col items-center justify-center">
-        <div class="flex flex-col md:flex-row items-center justify-between w-full gap-4 border-b border-gray-200 dark:border-gray-700 pb-12">
+    <SectionContainer classList="py-12 flex flex-col items-center justify-start">
+        <div class="flex flex-col md:flex-row items-start justify-center w-full gap-4 border-b border-gray-200 dark:border-gray-700 pb-12">
 
             <!-- Left side -->
-            <div class="flex flex-col md:flex-1 items-center justify-center">
+            <div class="flex flex-col :flex-1 items-center justify-start">
                 <img src={logo.src} alt="Logo Rosario360" class="max-w-full h-24 mb-4">
                 <p class="md:pr-16">
-                    Rosario360 es un proyecto dedicado a promocionar el turismo en el municipio de Villa del Rosario, llevado a cabo en su totalidad por Miguel Silva, Diego Ayala y Javier Ayala.
+                    Rosario360 es un proyecto que busca promocionar el turismo en el municipio de Villa del Rosario, llevado a cabo en su totalidad por Miguel Silva, Diego Ayala y Javier Ayala.
                 </p>
             </div>
 
             <!-- Right side -->
-            <div class="flex md:flex-1 flex-col md:flex-row gap-6">
+            <div class="flex flex-col xl:flex-1 xl:flex-row gap-10 items-center w-full">
                 <FooterSection title="Redes Sociales">
-                    <FooterLink href="https://github.com/JavierAyalaQ/Rosario360" icon="fa-github" />
-                    <FooterLink href="#" icon="fa-twitter" />
-                    <FooterLink href="#" icon="fa-instagram" />
+                    <FooterLink href="https://github.com/JavierAyalaQ/Rosario360" icon="fab fa-github" text="Github" />
+                    <FooterLink href="#" icon="fab fa-facebook" text="Facebook" />
+                    <FooterLink href="#" icon="fab fa-instagram" text="Instagram" />
                 </FooterSection>
 
                 <FooterSection title="Nuestros Asociados">
-                    <FooterLink href="#" icon="fa-waze" />
-                    <FooterLink href="#" icon="fa-behance" />
-                    <FooterLink href="#" icon="fa-accessible-icon" />
+                    <FooterLink href="#" icon="fa-solid fa-user-group" text="Villa Gourmet" />
+                    <FooterLink href="#" icon="fa-solid fa-people-group" text="Villa Empress" />
+                    <FooterLink href="#" icon="fa-solid fa-users-line" text="VillaAgro" />
                 </FooterSection>
 
-                <FooterSection title="Contácto">
+                <FooterSection title="Contáctanos">
                     <a href="#" target="_blank" class="text-sm lg:text-lg inline-flex items-center justify-center gap-1 transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
                         <i class="fa-solid fa-envelope"></i>
                         <span>rosario360@gmail.com</span>
                     </a>
-                    <a href="#" target="_blank" class="text-sm inline-flex items-center justify-center gap-1 transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
+                    <a href="#" target="_blank" class="text-sm lg:text-lg inline-flex items-center justify-center gap-1 transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200">
                         <i class=" fab fa-whatsapp"></i>
                         <span>+57 322 222 1100</span>
                     </a>

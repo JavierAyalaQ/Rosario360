@@ -3,10 +3,12 @@ interface Props {
     href: string;
     icon: string;
     classList?: string;
+    text?: string;
 }
-const { href, icon, classList } = Astro.props;
+const { href, icon, classList, text } = Astro.props;
 ---
 
 <a href={href} target="_blank" class={`transition-colors duration-200 hover:text-gray-800 dark:hover:text-gray-200 ${classList}`}>
-    <i class={`fa-solid fab ${icon}`}></i>
+    <i class={`${icon}`}></i>
+    {text && <span class="inline-flex text-sm lg:text-lg">{text}</span>}
 </a>

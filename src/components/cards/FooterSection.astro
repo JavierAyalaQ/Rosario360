@@ -6,11 +6,11 @@ const { title } = Astro.props;
 
 ---
 
-<div class="flex flex-col items-center justify-start">
+<div class="flex flex-col items-start justify-start w-full">
     <h5 class="mb-2 text-base font-bold text-gray-800 dark:text-gray-200">
         {title}
     </h5>
-    <div class="flex flex-col items-start justify-center text-2xl">
+    <div class="flex flex-col items-start justify-center text-xl md:text-2xl">
         <slot />
     </div>
 </div>
