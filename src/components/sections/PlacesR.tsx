@@ -22,12 +22,12 @@ const PlacesR = () => {
     return (
         <>
             <div className="flex flex-col">
-                <h2 className="text-3xl xl:text-5xl font-bold text-green-950 dark:text-green-600 ml-8 mt-32 mb-6" >
+                <h2 className="text-3xl xl:text-5xl font-bold text-green-950 dark:text-green-600 mt-20 mb-6" >
                     Bienes de Interés Cultural
                 </h2>
                 <p className="text-xl">
                     Conoce los{" "}
-                    <a href="#" className="font-semibold text-red-800 dark:text-red-500 hover:underline">
+                    <a href="/bic" className="font-semibold text-red-800 dark:text-red-500 underline hover:text-red-700 dark:hover:text-red-300">
                         Bienes de Interés Cultural
                     </a>{" "}
                     de la nación ubicados en Villa del Rosario, declarados así mediante el Plan Estratégico de Mantenimiento del Patrimonio decreto 1500 de 2012.
@@ -36,6 +36,7 @@ const PlacesR = () => {
             <div className="grid items-start justify-center grid-cols-1 gap-8 mx-auto mt-12 sm:grid-cols-2 lg:grid-cols-3 md:gap-4">
                 {itemsToRender.map(({ id, slug, name, description, image, href }) => (
                     <PlaceCardR
+                        key={id}
                         id={id}
                         name={name}
                         description={description}

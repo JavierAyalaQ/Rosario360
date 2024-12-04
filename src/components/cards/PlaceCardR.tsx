@@ -1,27 +1,27 @@
 import React from "react";
+import HoverImage from "@components/cards/HoverImage.tsx";
 
 export interface PlaceCardProps {
     id: number;
     name: string;
     description: string;
     image: string;
-    href: string;
+    href?: string;
 }
 
 const PlaceCard: React.FC<PlaceCardProps> = ({ id, name, description, image, href } ) => {
     return (
         <article
-            key={id}
             className="max-w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
         >
-            <a href={href}>
-                <img
-                    className="rounded-t-lg object-cover max-w-full aspect-video"
-                    src={image}
-                    alt={`Fotografía de ${name}, uno de los Bienes de Interés Cultural ubicado en Villa del Rosario`}
-                    style={{ viewTransitionName: `bic-${id}` }}
-                />
-            </a>
+            <HoverImage 
+                icon="fa-solid fa-location"
+                href={href}
+                transition={`bic-${id}`}
+                image={image}
+                alt={`Fotografía de ${name}, uno de los Bienes de Interés Cultural ubicado en Villa del Rosario`}
+                titleTag={name}
+            />
             <div className="p-5">
                 <a href={href}>
                     <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-neutral-100 md:truncate"
@@ -35,7 +35,7 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ id, name, description, image, hre
                 </p>
                 <a
                     href={href}
-                    className="text-sm font-medium text-gray-600 transition-all hover:text-gray-900 dark:text-neutral-400 dark:hover:text-white
+                    className="text-sm font-medium text-gray-600 transition-all duration-300 hover:ml-6 hover:text-gray-900 dark:text-neutral-400 dark:hover:text-white
                     translate-x-6 ml-2"
                     data-astro-prefetch=""
                 >

@@ -53,11 +53,10 @@ const { title, metaDescription } = Astro.props;
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-		<!-- Change to ClientRouter on Astro ^5.0.0 -->
 		<ClientRouter />
 	</head>
 
-	<body class="text-gray-800 bg-neutral-100 dark:bg-neutral-900 dark:text-neutral-100">
+	<body class="text-gray-800 bg-neutral-100 dark:bg-neutral-900 dark:text-neutral-100 font-medium">
 		<Navbar />
 		<main>
 			<slot />
