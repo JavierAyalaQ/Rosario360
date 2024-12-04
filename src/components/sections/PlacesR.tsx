@@ -1,6 +1,6 @@
 import { useState } from "react";
 import placesData from "@data/placesData.json";
-import PlaceCardR from "@components/cards/PlaceCardR.jsx";
+import PlaceCardR from "@components/cards/PlaceCardR.tsx";
 
 const PlacesR = () => {
     const initialItems = 6;
@@ -34,9 +34,9 @@ const PlacesR = () => {
                 </p>
             </div>
             <div className="grid items-start justify-center grid-cols-1 gap-8 mx-auto mt-12 sm:grid-cols-2 lg:grid-cols-3 md:gap-4">
-                {itemsToRender.map(({ key, slug, name, description, image, href }) => (
+                {itemsToRender.map(({ id, slug, name, description, image, href }) => (
                     <PlaceCardR
-                        key={key}
+                        id={id}
                         name={name}
                         description={description}
                         image={image}

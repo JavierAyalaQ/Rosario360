@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 
 // Videos
 import video1 from "@vid/video-promo.mp4";
-import video2 from "@vid/video-sr.mp4";
-import video3 from "@vid/video-sra.mp4";
+import video2 from "@vid/video-sra.mp4";
+import video3 from "@vid/video-sr.mp4";
 
 const VideoSlider: React.FC = () => {
   const videos = [video1, video2, video3];
@@ -78,7 +78,7 @@ const VideoSlider: React.FC = () => {
         ))}
 
         {/* Controls */}
-        <div className="flex absolute top-0 right-1/2 transform translate-x-1/2 gap-16 mt-4 p-8 text-2xl z-20 text-gray-200">
+        <div className="grid grid-cols-4 place-content-center absolute top-0 right-1/2 transform translate-x-1/2 gap-16 mt-4 p-8 text-2xl text-gray-200 z-20">
           <button id="prevBtn" onClick={handlePrev} className="control-button pointer-events-auto">
             <i className="fa fa-chevron-left"></i>
           </button>
@@ -101,10 +101,10 @@ const VideoSlider: React.FC = () => {
           desde sus sabores, historia y hospitalidad
         </p>
         <div className="flex flex-col md:flex-row gap-12 md:gap-6">
-          <a href="#" className="button text-semibold bg-green-500 hover:bg-green-600 text-green-950 px-4 py-2 rounded transition-colors">
+          <a href="#" className="button font-semibold bg-green-500 hover:bg-green-600 text-green-950 px-4 py-2 rounded transition-colors">
             Empezar ahora
           </a>
-          <a href="#" className="button text-semibold bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded transition-colors">
+          <a href="#" className="button font-semibold bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded transition-colors">
             Conoce más
           </a>
         </div>

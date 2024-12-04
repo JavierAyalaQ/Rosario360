@@ -1,9 +1,17 @@
 import React from "react";
 
-const PlaceCard = ({ key, name, description, image, href }) => {
+export interface PlaceCardProps {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+    href: string;
+}
+
+const PlaceCard: React.FC<PlaceCardProps> = ({ id, name, description, image, href } ) => {
     return (
         <article
-            key={key}
+            key={id}
             className="max-w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
         >
             <a href={href}>
@@ -11,7 +19,7 @@ const PlaceCard = ({ key, name, description, image, href }) => {
                     className="rounded-t-lg object-cover max-w-full aspect-video"
                     src={image}
                     alt={`Fotografía de ${name}, uno de los Bienes de Interés Cultural ubicado en Villa del Rosario`}
-                    style={{ viewTransitionName: `bic-${key}` }}
+                    style={{ viewTransitionName: `bic-${id}` }}
                 />
             </a>
             <div className="p-5">
