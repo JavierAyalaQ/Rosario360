@@ -6,6 +6,6 @@ interface Props {
 const { marginY, classList = '' } = Astro.props;
 ---
 
-<section class:list={[`max-w-screen-xl mx-auto px-4 ${classList}`, marginY ? `${marginY}` : '']}>
+<section class:list={[`max-w-screen-xl mx-auto px-8 ${classList}`, marginY ? `${marginY}` : '']}>
     <slot />
 </section>
