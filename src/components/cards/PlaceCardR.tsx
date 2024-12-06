@@ -15,7 +15,7 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ id, name, description, image, hre
             className="max-w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
         >
             <HoverImage 
-                icon="fa-solid fa-location"
+                icon="fa-solid fa-building-columns"
                 href={href}
                 transition={`bic-${id}`}
                 image={image}
