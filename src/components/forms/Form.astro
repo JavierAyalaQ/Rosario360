@@ -2,8 +2,8 @@
 import SectionContainer from "@components/wrappers/SectionContainer.astro"
 ---
 
-<SectionContainer >
-    <form id="contactForm" novalidate class="w-full flex flex-col gap-2 mb-32">
+<SectionContainer marginY="my-20" >
+    <form id="contactForm" novalidate class="w-full flex flex-col gap-2">
         <input type="text" class="border border-gray-300 bg-transparent p-3 w-full rounded outline-none focus:ring ring-green-500/40" id="name" placeholder="Nombre"
             required data-validation-required-message="Por favor, escribe tu nombre" />
         <p class="help-block text-danger"></p>
