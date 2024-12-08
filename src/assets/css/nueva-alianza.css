@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+/* -------- SECCIÓN CONTENDOR FONDO DE PANTALLA ------------------------------*/
+.contenedor_transmedia {
+    width: 100%!important;
+    height: 100vh;
+    display: flex;
+}
+/* -------- SECCIÓN CONTENDOR FONDO DE PANTALLA END --------------------------*/
+/*============================================================================*/
+/* -------- SECCIÓN MODAL INICIO CARGA PAGINA WEB ----------------------------*/
+.contenedorModal {
+    z-index: 4;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: transform 2s;
+}
+.cajaModal {
+    width: 70%;
+    height: 490px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.707);
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .3s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
+}
+
+#spanModal {
+    width:  50px;
+    height: 50px;
+    position: absolute;
+    right: -19px;
+    border-radius: 50%;
+    margin-top: -63px!important;
+    background-color: #0066ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textoModal {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-align: justify;
+}
+/* -------- SECCIÓN MODAL INICIO CARGA PAGINA WEB END ------------------------*/
+/*============================================================================*/
+/* -------- SECCIÓN BARRA DE NAVEGACIÓN TRANSMEDIA ---------------------------*/
+.contenedor_Navegador {
+    width: 100%;
+    height: 180px;
+    position: fixed;
+    display: flex;
+    z-index: 1;
+}
+.contenedor_nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 50px!important;
+}
+.cajaLogo img {
+    width: 75px;
+}
+nav {
+    width: 50%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+nav label, .ul-second li {
+    width: 20%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 1px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    /* z-index: 1; */
+    /* transition: all 0.3s ease; */
+    /* background: #0066ff; */
+}
+nav label a, .ul-second li a {
+    text-decoration: none;
+    color: white;
+}
+
+.contenedor_acciones {
+    width: 80px;
+    margin-left: 35vw;
+}
+.contenedor_acciones img {
+    width: 35px;
+    height: auto;
+}
+
+/* -------- SECCIÓN BARRA DE NAVEGACIÓN TRANSMEDIA END -----------------------*/
+/*============================================================================*/
+/* -------- SECCIÓN VIDEO FONDO DE PANTALLA LOOP -----------------------------*/
+video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+/* -------- SECCIÓN VIDEO FONDO DE PANTALLA LOOP END -------------------------*/
+/*============================================================================*/
+/* -------- SECCIÓN BARRA DE NAVEGACION DEL RECORRIDO NUEVA ALIANZA ----------*/
+.banner_botonera {
+    position: fixed;
+    width: 100vw!important;
+    height: 33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 3;
+    bottom: -130px;
+    transition: .8s;
+    /* background-color: yellow; */
+}
+
+.banner_botonera:hover {
+    bottom: -3px;
+    transition: .8s;
+}
+
+.cajas_banner_botonera {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* background-color: tomato; */
+}
+
+.caja_botones img {
+    width: 95%;
+}
+/* -------- SECCIÓN BARRA DE NAVEGACION DEL RECORRIDO NUEVA ALIANZA END ------*/
+/*============================================================================*/
+
+@media only screen and (min-width: 319px) and (max-width: 620px) {
+    .contenedor_transmedia {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+    }
+    .contenedor_Navegador {
+        width: 100%;
+        height: 60px;
+        margin-top: 30px!important;
+        /* background-color: blueviolet; */
+    }
+    .contenedor_nav {
+        width: 100%;
+        margin-left: -10px!important;
+    }
+    .cajaLogo {
+        display: none;
+    }
+    nav {
+        width: 100%;
+        /* background-color: burlywood; */
+    }
+    nav label {
+        width: 115px;
+        justify-content: center;
+        /* background-color: brown; */
+    }
+    nav label a {
+        font-size: 1.5em;
+    }
+    
+    #spanModal {
+        width:  50px;
+        height: 50px;
+        position: absolute;
+        right: -19px;
+        border-radius: 50%;
+        margin-top: -63px!important;
+        background-color: #0066ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #spanModal p {
+        font-size: 3em;
+        margin-top: 10px;
+        align-items: center;
+        color: white;
+    }   
+    .cajaModal {
+        width: 80%;
+        height: 70vh;
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.707);
+        transform: var(--transform);
+        transition: var(--transition);
+    }
+
+    /*============================================================================*/
+    /* -------- SECCIÓN VIDEO FONDO DE PANTALLA LOOP -----------------------------*/
+    video {
+        width: 100%;
+        height: 94vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+    /* -------- SECCIÓN VIDEO FONDO DE PANTALLA LOOP END -------------------------*/
+    /*============================================================================*/
+    /* -------- SECCIÓN BARRA DE NAVEGACION DEL RECORRIDO NUEVA ALIANZA ----------*/
+    body {
+        background-color: black;
+        height: 80vh!important;
+    }
+    .banner_botonera {
+        position: absolute;
+        width: 100vw!important;
+        height: 100px;
+        display: flex;
+        margin-bottom: 30%!important;
+        justify-content: space-between;
+        align-items: flex-end;
+        z-index: 4;
+        /* background-color: yellow; */
+    }
+
+    .cajas_banner_botonera {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /* background-color: tomato; */
+    }
+
+    .caja_botones img {
+        width: 95%;
+    }
+}

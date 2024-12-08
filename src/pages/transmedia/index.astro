@@ -1,0 +1,144 @@
+---
+import LayoutTransmedia from "@layouts/LayoutTransmedia.astro"
+
+import cssAlianza from "@assets/css/nueva-alianza.css"
+import BicSlider from "@components/sections/BicSlider.tsx";
+---
+
+
+<LayoutTransmedia title="Transmedia" >
+    <slot slot="imports" >
+        <link rel="stylesheet" href={cssAlianza} >
+    </slot>
+
+    <div class="container-fluid contenedor_transmedia">
+        <div class="row contenedorModal mt-20">
+            <div class="col-md-6 mx-auto d-flex justify-content-center align-items-center">
+                <div class="cajaModal">
+                <button id="spanModal"><i class="fa-solid fa-xmark text-2xl text-white"></i></button>
+                <p class="textoModal">Narrativas Sonoras por los Caminos de las Fronteras nace como uno de los semilleros de comunicación apoyado por el programa Conectando Caminos de USAID.<br><br>
+                Desde el Semillero te invitamos a recorrer la comunidad de Nueva Alianza, en Cúcuta, en la frontera colombo venezolana donde los migrantes no quieren perder su identidad sino por el contrario unirse, aferrarse y sostener una identidad colectiva para compartir experiencias,  superando los difíciles momentos que tuvieron que pasar en el proceso migratorio con iniciativas para la protección de sus Derechos.
+                <br><br>
+                Haz click en cada historia de vida para iniciar el recorrido</p>
+                </div>
+            </div>
+        </div>
+        <div class="row contenedor_Navegador">
+        <div class="contenedor_nav">
+            <div class="cajaLogo">
+            <img src="assets/img/transmedia/logo_narrativas_positivo.png" class="img-fluid" alt="">
+            </div>
+         <!--    <nav>
+                <label for="Inicio" class="Inicio"><a href="recorridos_nueva_alianza.html">INICIO</a></label>
+                <label for="Narrativas_sonoras" class="Narrativas_sonoras develop"><a href="podcast/index.html">PODCAST</a></label>
+                <label for="Blog" class="Blog"><a href="blog/blog.html">BLOG</a></label>
+                <label for="Creditos" class="Creditos"><a href="quienes_nos_apoyan.html">NOS APOYAN</a> </label>
+            </nav> -->
+            <BicSlider client:visible />
+            <div class="contenedor_acciones z-1 text-white text-2xl flex flex-col justify-center items-center gap-8">
+                <button onclick="fullScreenIs()" id="mostrar-fullscreen" class="btn btn-primary">
+                    <i class="fa-solid fa-expand"></i>
+                </button>
+                <button onclick="playOrPause()" id="imgClickAndChange" class="btn btn-primary">
+                    <i class="fa-solid fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+        </div>
+        <div class="row cajonVideo">
+        <div class="col-md-12">
+            <!-- SECCIÓN DEL VIDEO LOOP QUE SE DEJA COMO FONDO DE PANTALLA --------->
+            <video autoplay loop muted poster="assets/video/bg_videointro.png.mp4">
+            <source src="assets/video/bg_videointro.png.mp4" type="video/mp4">
+            </video>
+        </div>
+        </div>
+        <!-- SECCIÓN BANNER PARA BOTONES QUE REDIRECCIONA A LOS RECORRIDOS ----->       
+        <div class="row banner_botonera">
+        <div class="col-12 col-md-12 cajas_banner_botonera">
+            <div class="caja_botones">
+            <a href="recorrido_Alejandra.html" type="button"  data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="Conoce los inicio de la comunidad Nueva Alianza y sus desafíos en la integración." class="animate__animated animate__bounce animate__slower animate__infinite infinite">
+                <img alt="Alejandra" onmouseout="this.src='assets/img/nuevaAlianza/alejanda_menu.png';" onmouseover="this.src='assets/img/nuevaAlianza/alejanda2_menu.png';" src="assets/img/nuevaAlianza/alejanda_menu.png" />
+            </a>
+            </div>
+            <div class="caja_botones">
+            <a href="recorrido_Jenifer.html" type="button"  data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="Descubre las luchas en la búsqueda de derechos e igualdad.">
+                <img alt="Alejandra" onmouseout="this.src='assets/img/nuevaAlianza/jenifer_menu.png';" onmouseover="this.src='assets/img/nuevaAlianza/jenifer2_menu.png';" src="assets/img/nuevaAlianza/jenifer_menu.png" />
+            </a>
+            </div>
+            <div class="caja_botones">
+            <a href="recorrido_Genesis.html" type="button"  data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="Iniciativa comunitaria para prevenir, apoyar y guiar a quienes han sido victimas de violencias basadas en género.">
+                <img alt="Alejandra" onmouseout="this.src='assets/img/nuevaAlianza/genesis_menu.png';" onmouseover="this.src='assets/img/nuevaAlianza/genesis2_menu.png';" src="assets/img/nuevaAlianza/genesis_menu.png" />
+            </a>
+            </div>
+            <div class="caja_botones">
+            <a href="recorrido_Vanesa.html" type="button"  data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="-Haz clic y descubre el trabajo de prevención de violencias basadas en género mediante la promoción de valores con niños, niñas y adolescentes.">
+                <img alt="Alejandra" onmouseout="this.src='assets/img/nuevaAlianza/vanesa_menu.png';" onmouseover="this.src='assets/img/nuevaAlianza/vanesa2_menu.png';" src="assets/img/nuevaAlianza/vanesa_menu.png" />
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="@assets/js/nueva-alianza.js"></script>
+    <script type="javascript">
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        /*============== FUNCION PARA REPRODUCIR LA MUSICA DE FONDO ==============================*/
+        /*============== FUNCION PARA REPRODUCIR LA MUSICA DE FONDO ==============================*/
+        let isPlaying = 0;
+        let audio;
+        console.log("creando audio");
+        audio = new Audio();
+        audio.src = "assets/audio/ambientes.aac"
+        
+        function playOrPause() {
+            if (audio.readyState < 2 /*HAVE_CURRENT_DATA*/) {
+            console.log("no está listo aún");
+            if (audio.error) {
+                console.log("error : " + audio.error.code + " -> " + audio.error.message);
+            }
+            return(0);
+        }
+        isPlaying = isPlaying + 1;
+        // console.log(isPlaying);
+        if (isPlaying == 1) {
+            audio.play();
+            document.getElementById("imgClickAndChange").src = "https://cdn.discordapp.com/attachments/1103770830128820296/1106873615854620752/sound_on_icon.png";
+            // console.log("playing");
+        } else {
+            audio.pause();
+            console.log("paused");
+            document.getElementById("imgClickAndChange").src = "https://cdn.discordapp.com/attachments/1103770830128820296/1106873615607144538/sound_off_icon.png";
+            isPlaying = 0;
+        }
+        return(isPlaying);
+        }
+        /*============== FUNCION PARA PONER LA PANTALLA EN FULLSCREEN ============================*/
+        /*============== FUNCION PARA PONER LA PANTALLA EN FULLSCREEN ============================*/
+        function fullScreenIs() {
+        function getFullscreenElement() {
+            return document.fullscreenElement
+            || document.webkitFullscreenElement
+            || document.mozFullscreenElement
+            || document.msFullscreenElement;
+        }
+    
+        function toggleFullscreen() {
+            if (getFullscreenElement()) {
+            document.exitFullscreen();
+            } else {
+            document.documentElement.requestFullscreen().catch(console.log);
+            }
+        }
+    
+        document.getElementById('mostrar-fullscreen').addEventListener("click", () => {
+            toggleFullscreen();
+        });
+    
+        document.addEventListener("fullscreenchange", () => {
+            console.log("¡Pantalla completa cambiada!")
+        })
+        }
+        </script>
+</LayoutTransmedia>
