@@ -31,8 +31,10 @@ const currentIndex = placesData.findIndex(p =>
 
 const prevSlug = currentIndex > 0 ? placesData[currentIndex - 1].slug : null;
 const nextSlug = currentIndex < placesData.length - 1 ? placesData[currentIndex + 1].slug : null;
+
+import videoSr from "@vid/video-sr.mp4";
 ---
 
 <LayoutTransmedia title={`Recorrido: ${name}}>
-  <Recorrido />
+  <Recorrido videoSrc={videoSr} />
 </LayoutTransmedia>
