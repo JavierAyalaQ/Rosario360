@@ -1,0 +1,20 @@
+---
+import LayoutTransmedia from "@layouts/LayoutTransmedia.astro"
+
+import BicSlider from "@components/sections/BicSlider.tsx";
+
+
+import videoSr from "@assets/video/bg-intro.mp4";
+---
+
+
+<LayoutTransmedia title="Transmedia" >
+    <slot slot="main" >
+        <div class="flex justify-center items-center absolute bottom-0 left-0 w-full h-full">
+            <BicSlider client:visible />
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full -z-10">
+            <video src={videoSr} class="w-full h-full object-cover -z-10" autoplay loop muted>Tu navegador no puede reproducir el elemento de video</video>
+        </div>
+    </slot>
+</LayoutTransmedia>
