@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 interface RecorridoNuevoProps {
   videoSrc: string;
   frameRate?: number; // Cuántos frames por segundo tiene el video (default: 30)
-  videoOptions?: { label: string; src: string }[]; // Lista de opciones de videos para reproducir
+  videoOptions: { label: string; src: string }[]; // Lista de opciones de videos para reproducir
   frameDelay?: number; // Tiempo mínimo entre avances/retrocesos en milisegundos (default: 500ms)
 }
 
