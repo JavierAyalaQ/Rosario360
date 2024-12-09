@@ -33,8 +33,10 @@ const prevSlug = currentIndex > 0 ? placesData[currentIndex - 1].slug : null;
 const nextSlug = currentIndex < placesData.length - 1 ? placesData[currentIndex + 1].slug : null;
 
 import videoSr from "@vid/video-sr.mp4";
+
+const videoOptions = [{title: "vid", src: "./public/vid/video-sra.mp4"},{title: "vid", src: "./public/vid/video-sra.mp4"}]
 ---
 
 <LayoutTransmedia title={`Recorrido: ${name}}>
-  <Recorrido videoSrc={videoSr} />
+  <Recorrido videoSrc={videoSr} videoOptions={videoOptions} />
 </LayoutTransmedia>
