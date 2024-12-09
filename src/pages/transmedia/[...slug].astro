@@ -38,5 +38,7 @@ const videoOptions = [{label: "vid", src: "./public/vid/video-sra.mp4"},{label: 
 ---
 
 <LayoutTransmedia title={`Recorrido: ${name}}>
+<slot slot="main" >
   <Recorrido videoSrc={videoSr} videoOptions={videoOptions} />
+</slot>
 </LayoutTransmedia>
