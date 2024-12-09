@@ -1,3 +1,77 @@
 ---
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/wrappers/SectionContainer.astro";
 
+import placesData from "@data/placesData.json";
+import NavigationIcon from "@components/buttons/NavigationIcon.astro";
+
+
+export function getStaticPaths() {
+    const places = placesData;
+    return placesData.map(({slug}) => ({
+        params: { slug },
+        props: { places }
+    }));
+}
+
+const { slug } = Astro.params;
+const place = placesData.find(p =>
+    p.slug === slug
+);
+
+if (!place) {
+    throw new Error(`Lugar con Slug: ${slug} no encontrado`);
+}
+const { id, name, description, image, address } = place;
+
+
+const currentIndex = placesData.findIndex(p => 
+    p.slug === slug
+);
+
+const prevSlug = currentIndex > 0 ? placesData[currentIndex - 1].slug : null;
+const nextSlug = currentIndex < placesData.length - 1 ? placesData[currentIndex + 1].slug : null;
 ---
+
+<Layout title={`${name} | Bienes de Interés Cultural`}>
+    <SectionContainer marginY="my-20" classList="px-12">
+        <h1 class="mb-12 text-5xl font-bold text-center text-red-900 dark:text-red-600">
+            Bienes de Interés Cultural
+        </h1>
+        <article class="mx-auto bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 md:grid md:grid-cols-2">
+            <figure class="overflow-hidden rounded-none rounded-t-lg md:rounded-none md:rounded-l-lg">
+                <img 
+                    src={image} 
+                    alt={`Fotografía de ${name}`}
+                    class="object-cover w-full h-auto rounded-sm aspect-video md:w-full md:h-full" 
+                    loading="lazy"
+                    transition:name={`bic-${id}`}
+                >
+            </figure>
+            <div class="p-5">
+                <h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-neutral-100">
+                    {name}
+                </h2>
+                <p>{description}</p>
+                { address && <p><strong class="italic">{address}</strong></p> }
+            </div>
+        </article>
+        <div class="grid items-center w-full grid-cols-3 px-8 mt-10 place-items-center">
+            <NavigationIcon 
+                href={prevSlug ? `/bic/${prevSlug}` : null}
+                icon="fa-arrow-left" 
+                classList={prevSlug ? '' : 'pointer-events-none opacity-[0.33]'} 
+            />
+            <NavigationIcon 
+                href={`/`} 
+                icon="fa-home" 
+                classList="" 
+            />
+            <NavigationIcon 
+                href={nextSlug ? `/bic/${nextSlug}` : null}
+                icon="fa-arrow-right" 
+                classList={nextSlug ? '' : 'pointer-events-none opacity-[0.33]'} 
+            />
+        </div>
+    </SectionContainer>
+</Layout>
