@@ -4,6 +4,7 @@ import SectionContainer from "@components/wrappers/SectionContainer.astro";
 
 import placesData from "@data/placesData.json";
 import NavigationIcon from "@components/buttons/NavigationIcon.astro";
+import TitleH1 from "@components/texts/TitleH1.astro";
 
 
 export function getStaticPaths() {
@@ -35,9 +36,7 @@ const nextSlug = currentIndex < placesData.length - 1 ? placesData[currentIndex 
 
 <Layout title={`${name} | Bienes de Interés Cultural`}>
     <SectionContainer marginY="my-20" classList="px-12">
-        <h1 class="mb-12 text-5xl font-bold text-center text-red-900 dark:text-red-600">
-            Bienes de Interés Cultural
-        </h1>
+        <TitleH1 title="Bienes de Interés Cultural" />
         <article class="mx-auto bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 md:grid md:grid-cols-2">
             <figure class="overflow-hidden rounded-none rounded-t-lg md:rounded-none md:rounded-l-lg">
                 <img 

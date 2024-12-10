@@ -1,45 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-const [showModal, setShowModal] = useState(false);
-const [activeFrames, setActiveFrames] = useState(frames);
-
-const handleFramesetChange = (newFrames: string[]) => {
-  setActiveFrames(newFrames);
-  setCurrentFrameIndex(0); // Reiniciar índice
-  setShowModal(false);
-};
-
-// Render modal (opciones de sets)
-{showModal && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
-    <div className="p-6 bg-white rounded-lg shadow-lg w-96">
-      <h2 className="text-xl font-bold text-center mb-4">Seleccionar Frameset</h2>
-      <ul className="space-y-2">
-        {frameSets.map((set, index) => (
-          <li key={index}>
-            <button
-              className="w-full px-4 py-2 text-white bg-green-600 rounded-lg shadow-md hover:bg-green-700 focus:outline-none"
-              onClick={() => handleFramesetChange(set.frames)}
-            >
-              {set.label}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <button
-        className="mt-4 w-full px-4 py-2 text-gray-700 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none"
-        onClick={() => setShowModal(false)}
-      >
-        Cerrar
-      </button>
-    </div>
-  </div>
-)}
 
 
-
-
-interface FramePlayerProps {
+export interface FramePlayerProps {
   frames: string[]; // Array de rutas de imágenes (frames)
   frameRate?: number; // Frames por segundo (default: 30)
   frameDelay?: number; // Tiempo mínimo entre cambios de frames en milisegundos (default: 500ms)

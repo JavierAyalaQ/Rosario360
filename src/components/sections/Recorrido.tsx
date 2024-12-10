@@ -11,7 +11,7 @@ const RecorridoNuevo: React.FC<RecorridoNuevoProps> = ({
   videoSrc, 
   frameRate = 30, 
   videoOptions, 
-  frameDelay = 500 
+  frameDelay = 250 
 }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [currentFrame, setCurrentFrame] = useState<number>(0);

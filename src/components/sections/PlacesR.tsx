@@ -22,7 +22,7 @@ const PlacesR = () => {
     return (
         <>
             <div className="flex flex-col">
-                <h2 className="text-3xl xl:text-5xl font-bold text-green-950 dark:text-green-600 mt-20 mb-6" >
+                <h2 className="text-3xl xl:text-5xl font-bold text-green-700 dark:text-green-600 mt-20 mb-6" >
                     Bienes de Interés Cultural
                 </h2>
                 <p className="text-xl">
