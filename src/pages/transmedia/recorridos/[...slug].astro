@@ -50,6 +50,6 @@ import videoSr from "@vid/video-sr.mp4";
 
 <LayoutTransmedia title={`Recorrido: ${name}`}>
     <slot slot="main" >
-        <Recorrido client:visible videoSrc={videoSr} videoOptions={videoOptions} />
+        <Recorrido client:visible videoSrc={videoSr} videoOptions={videoOptions} frameDelay={500} />
     </slot>
 </LayoutTransmedia>
