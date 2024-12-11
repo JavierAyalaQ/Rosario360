@@ -1,0 +1,220 @@
+---
+import NavbarLink from "@components/buttons/NavbarLink.astro"
+import NavbarDropdownLink from "@components/buttons/NavbarDropdownLink.astro"
+
+import logo from "@img/logo.png";
+
+---
+
+<!-- Full width with dropdown -->
+<nav id="navbar" class="top-0 w-full bg-white border-b border-gray-200 dark:bg-neutral-800 dark:border-gray-700">
+    <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+        <a href="/">
+            <img
+                src={logo.src}
+                alt="Logo del proyecto Rosario360"
+                loading="lazy"
+                class="w-auto h-10 max-w-full"
+            />
+        </a>
+        <button
+            data-collapse-toggle="navbar-menu"
+            type="button"
+            class="inline-flex items-center justify-center w-10 h-10 p-2 rounded-lg outline-none md:hidden hover:bg-gray-100 ring-2 ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-600"
+            aria-controls="navbar-menu"
+            aria-expanded="false"
+        >
+            <i class="text-2xl text-gray-800 dark:text-gray-300 fa-solid fa-bars"></i>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-menu">
+            <ul
+                class="flex flex-col p-4 mt-4 font-semibold border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-inherit md:dark:bg-inherit dark:border-gray-700">
+                <li>
+                    <NavbarLink href="/" body="Inicio" />
+                </li>
+                <!-- Toggle dropdown -->
+                <li>
+                    <NavbarLink href="/transmedia" body="Transmedia" />
+                </li>
+                <li>
+                    <NavbarLink href="/podcast" body="Podcast" />
+                </li>
+                <li>
+                    <NavbarLink href="/contact" body="Contáctanos" />
+                </li>
+                <li>
+                    <button id="dropdownNavbarButton" data-dropdown-toggle="dropdownNavbar" class="relative flex items-center justify-between w-full px-3 py-2 text-gray-700 transition-colors duration-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-300 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                    >
+                        Asociados
+                        <i class="ml-2 fa-solid fa-chevron-down text-md"></i>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar"
+                        class="z-10 hidden font-normal absolute right-8 md:right-auto md:translate-x-[-1rem] bg-white divide-y divide-gray-100 rounded-lg shadow w-36 dark:bg-gray-700 dark:divide-gray-600">
+                        <ul
+                            class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                            aria-labelledby="dropdownLargeButton"
+                        >
+                            <li>
+                                <NavbarDropdownLink href="#" body="AgroVilla" />
+                            </li>
+                            <li>
+                                <NavbarDropdownLink href="/associated/villa-gourmet" body="Villa Gourmet" /> 
+                            </li>
+                            <li>
+                                <NavbarDropdownLink href="#" body="Villa Empress" />
+                            </li>
+                        </ul>
+                        <div class="py-1">
+                            <a
+                                href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                            >
+                                Registrarse
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Sticky Navbar -->
+<script>
+    document.addEventListener('astro:page-load', () => {
+        function makeNavbarSticky() {
+        const navbar = document.getElementById("navbar") as HTMLElement;
+        const sticky = navbar.offsetTop + 50;
+    
+        function updateNavbar() {
+            if (window.scrollY >= sticky) {
+            navbar.classList.add('sticky');
+            } else {
+            navbar.classList.remove('sticky');
+            }
+        }
+        window.addEventListener('scroll', updateNavbar);
+        }
+        makeNavbarSticky();
+    });
+</script>
+
+
+<!-- Hamburger Menu -->
+<script>
+    document.addEventListener('astro:page-load', () => {
+        const navbarMenuButton = document.querySelector('[data-collapse-toggle="navbar-menu"]');
+        const navbarMenu = document.getElementById("navbar-menu");
+
+        if (navbarMenuButton && navbarMenu) {
+            navbarMenuButton.addEventListener("click", () => {
+                navbarMenu.classList.toggle("hidden");
+
+                if(navbarMenuButton.getAttribute('aria-expanded') === 'false') {
+                    navbarMenuButton.setAttribute('aria-expanded', 'true');
+                } else {
+                    navbarMenuButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+        document.addEventListener('click', (event) => {
+            if (!navbarMenu.contains(event.target as Node) && 
+                !navbarMenuButton.contains(event.target as Node)) {
+                navbarMenu.classList.add("hidden");
+            }
+        });
+        }
+    });
+</script>
+
+
+<!-- Navbar Colors -->
+<script>
+    document.addEventListener('astro:page-load', () => {
+        function updateNavLinks() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+    
+            // Mobile styling
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath && window.innerWidth < 768) {
+                    link.classList.add('bg-green-700');
+                    link.classList.add('text-white');
+                } else {
+                    link.classList.remove('bg-green-700');
+                    link.classList.remove('text-white');
+                }
+            });
+    
+            // Desktop styling
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath && window.innerWidth >= 768) {
+                    link.classList.add('md:text-green-700');
+                    link.classList.add('md:dark:text-green-300');
+                } else {
+                    link.classList.remove('md:text-green-700');
+                    link.classList.remove('md:dark:text-green-300');
+                }
+            });
+        };
+        updateNavLinks();
+        window.addEventListener('popstate', updateNavLinks);
+        window.addEventListener('resize', updateNavLinks);
+    });
+</script>
+
+
+<!-- Dropdown Menu -->
+<script>
+    document.addEventListener('astro:page-load', () => {
+        const dropdownNavbar = document.getElementById("dropdownNavbar") as HTMLElement;
+        const dropdownNavbarButton = document.getElementById("dropdownNavbarButton") as HTMLElement;
+
+        function handleClick(){
+            dropdownNavbarButton.addEventListener("click", (event) => {
+                event.stopPropagation();
+                dropdownNavbar.classList.toggle("hidden");
+            });
+        };
+        handleClick();
+
+        // Close dropdown on click outside
+        function closeDropdown() {
+            dropdownNavbar.classList.add("hidden");
+        }
+
+        document.addEventListener("click", (event) => {
+            if (!dropdownNavbar.contains(event.target as Node) && 
+                !dropdownNavbarButton.contains(event.target as Node)) {
+                closeDropdown();
+            }
+        });
+        document.addEventListener("touchstart", (event) => {
+            if (!dropdownNavbar.contains(event.target as Node) && 
+                !dropdownNavbarButton.contains(event.target as Node)) {
+                closeDropdown();
+            }
+        });
+    })
+</script>
+
+
+<!-- Sticky Navbar Animation Styles -->
+<style>
+	.sticky {
+        position: fixed;
+        box-shadow: 0 0 20px 0 #0000001a;
+        z-index: 100;
+        transition: box-shadow 0.4s ease-in-out;
+        animation: fadeIn .75s ease-out both;
+    }
+        @keyframes fadeIn {
+            from{
+            transform: translateY(-100%);
+            }
+            to{
+            transform: translateY(0);
+            }
+        }
+</style>

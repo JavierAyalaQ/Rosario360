@@ -1,0 +1,11 @@
+---
+interface Props {
+    marginY?: "my-32" | "my-20";
+    classList?: string;
+}   
+const { marginY, classList = '' } = Astro.props;
+---
+
+<section class:list={[`max-w-screen-xl mx-auto px-8 ${classList}`, marginY ? `${marginY}` : '']}>
+    <slot />
+</section>
