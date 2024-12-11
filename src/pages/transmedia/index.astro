@@ -16,22 +16,22 @@ import videoSr from "@vid/bg-intro.mp4";
         <button id="fullscreenBtn" class="absolute top-20 right-20 z-10 bg-black text-white rounded-full shadow-md hover:bg-white hover:text-black transition-colors duration-300 hover:opacity-80">
             <i class="fa-solid fa-expand text-inherit p-2"></i>
         </button>
-        <div class="absolute top-0 left-0 w-full -z-10">
-            <video src={videoSr} class="w-full object-cover -z-10" autoplay loop muted>Tu navegador no puede reproducir el elemento de video</video>
-        </div>
+        <video src={videoSr} class="w-full h-full pointer-events-none object-cover -z-10" autoplay loop muted>Tu navegador no puede reproducir el elemento de video</video>
     </slot>
 </LayoutTransmedia>
 
 <script is:inline>
     document.addEventListener("astro:page-load", () => {
         const fullscreenBtn = document.getElementById("fullscreenBtn");
-        const isFullscreen = document.fullscreenElement !== null;
+        let isFullscreen = false;
         
         fullscreenBtn.addEventListener("click", () => {
-            if (isFullscreen) {
-                document.exitFullscreen();
+            if (isFullscreen === true) {
+                document.documentElement.exitFullscreen();
+!isFullscreen;
             } else {
                 document.documentElement.requestFullscreen();
+!isFullscreen 
             }
         });
     });
