@@ -1,0 +1,61 @@
+---
+import TitleH2 from "@components/texts/TitleH2.astro";
+import SectionContainer from "@components/wrappers/SectionContainer.astro";
+---
+
+<SectionContainer marginY="my-20" classList="border-y border-neutral-900/10 dark:border-neutral-100/10">
+    <TitleH2 title="Últimas publicaciones" classList="mt-32"/>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
+        <div class="bg-white rounded-xl p-4 shadow-md dark:bg-gray-800">
+            <div class="aspect-video p-4">
+                <img src="https://plus.unsplash.com/premium_photo-1692608746931-e9a2353affa9?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="object-cover rounded-md w-full h-full">
+            </div>
+            <div class="p-4 pt-0">
+                <div class="flex justify-between items-center">
+                    <span class="bg-blue-400 text-blue-950 text-xs font-semibold px-3 py-1 rounded-xl">Artículo</span>
+                    <time class="text-xs font-light" datetime="2023-01-01">21 de Febrero 2024</time>
+                </div>
+                <h5 class="mt-4 text-md font-semibold">
+                    Se aproxima la feria de la Virgen de la Candelaria
+                </h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl p-4 shadow-md dark:bg-gray-800">
+            <div class="aspect-video p-4">
+                <img src="https://plus.unsplash.com/premium_photo-1686529896385-8a8d581d0225?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="object-cover rounded-md w-full h-full">
+            </div>
+            <div class="p-4 pt-0">
+                <div class="flex justify-between items-center">
+                    <span class="bg-blue-400 text-blue-950 text-xs font-semibold px-3 py-1 rounded-xl">Artículo</span>
+                    <time class="text-xs font-light" datetime="2023-01-01">14 de Enero 2024</time>
+                </div>
+                <h5 class="mt-4 text-md font-semibold">
+                    Este fin de semana se celebró la cuarta venta agropecuaria
+                </h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl p-4 shadow-md dark:bg-gray-800">
+            <div class="aspect-video p-4">
+                <img src="https://images.unsplash.com/photo-1601737317921-1c5fe2e34431?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="object-cover rounded-md w-full h-full">
+            </div>
+            <div class="p-4 pt-0">
+                <div class="flex justify-between items-center">
+                    <span class="bg-green-400 text-green-950 text-xs font-semibold px-3 py-1 rounded-xl">Entrevista</span>
+                    <time class="text-xs font-light" datetime="2023-01-01">12 de Enero 2024</time>
+                </div>
+                <h5 class="mt-4 text-md font-semibold">
+                    Conozca la historia de Rodolfo José Cáceres, escritor y poeta Rosariense
+                </h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore veritatis vitae aliquam neque consequuntur repellendus expedita</p>
+            </div>
+        </div>
+    </div>
+    <div class="grid place-content-center">
+        <a href="" class="bg-yellow-200 text-yellow-950 text-xl font-semibold px-6 py-3 rounded mt-20 mb-20 hover:bg-yellow-500 transition-colors outline-none focus:ring-4 ring-yellow-300">
+            Visitar el blog
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+</SectionContainer>

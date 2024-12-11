@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%!important;
+  }
+  
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 0px;
+}
+  
+  
+.loading {
+background: #000;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.porsentaje {
+color:  #999;
+font-size: 100px;
+font-weight: 400;
+text-align: center;
+margin-bottom: 15px;
+}
+
+.text {
+position: absolute;
+left: 160px;
+color: #fdb5ca;
+font-size: 15px;
+letter-spacing: 1px;
+line-height: 21px;
+display: none;
+}
+
+.text-blink {
+animation: blink .7s ease-in-out .1s;
+}
+
+@keyframes blink {
+0% {
+    opacity: 1;
+}
+50% {
+    opacity: .2;
+}
+100% {
+    opacity: 1;
+}
+}
+
+.progreso-barra {
+width: 406px;
+height: 21px;
+background: #111;
+border-radius: 13px;
+padding: 3px;
+box-sizing: border-box;
+}
+
+.progreso {
+width: 200px;
+height: 15px;
+background: #f60d54;
+border-radius: 13px;
+}
+
+.loader {
+background: #000;
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1000000;
+clip-path: circle(150% at 100% 0);
+transition: clip-path 0.5s ease-in-out;
+}
+  
+.loader2 {
+    clip-path: circle(0% at 100% 0);
+}
+
+.contenedor_transmedia {
+    width: 100%!important;
+}
+/*============================================================================*/
+/* -------- SECCIÓN BARRA DE NAVEGACIÓN TRANSMEDIA ---------------------------*/
+.contenedor_Navegador {
+    width: 100%;
+    height: 180px;
+    position: fixed;
+    display: flex;
+    z-index: 1;
+}
+.contenedor_nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 50px!important;
+}
+.cajaLogo img {
+    width: 75px;
+}
+nav {
+    width: 50%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+nav label, .ul-second li {
+    width: 20%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 1px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    /* z-index: 1; */
+    /* transition: all 0.3s ease; */
+    /* background: #0066ff; */
+}
+nav label a, .ul-second li a {
+    text-decoration: none;
+    color: white;
+}
+
+.contenedor_acciones {
+    width: 80px;
+    margin-left: 35vw;
+}
+.contenedor_acciones img {
+    width: 35px;
+    height: auto;
+}
+
+/* -------- SECCIÓN BARRA DE NAVEGACIÓN TRANSMEDIA END -----------------------*/
+/*============================================================================*/
+.cajaOculta {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 16;
+}
+.cajaBtnVideo {
+    width: 100%;
+    height: 70%;
+    z-index: 12;    
+    transition: 2s ease-in;
+    margin: auto;
+    background: url(../img/bg_videos_overlay.png) no-repeat;
+    background-size: cover;
+  }
+  
+  .cajaVideo {
+    width:  100%;
+    height: 100%;
+    /* position: fixed; */
+    margin-top: 50px!important;
+    background-color: rgba(0, 255, 255, 0);
+  }
+  
+  /*AHORA SI MILDRED TE PUSISTE LA 1O 😎😎😎*/
+  
+.btn {
+    position: relative;
+    cursor: pointer;
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn .play {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: 1px solid cornflowerblue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 15px 25px rgba(52, 100, 190, 0.903); */
+    transition: 0.5s;
+    margin: 70px 0 20px 0;
+    animation: palpitar 0.9s linear infinite alternate;
+}
+
+@keyframes palpitar {
+    0%{transform:   scale(1.10);}
+    50%{transform:  scale(1.0);}
+    100%{transform: scale(0.8);}
+}
+
+.btn.activo .play {
+    box-shadow: 0 0 0 150vh rgba(52, 100, 190, 0.903);
+}
+
+.btn .play::before {
+    content: '';
+    position: absolute;
+    border: 25px solid cornflowerblue;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 0 solid transparent;
+    transform: translateX(3px);
+}   
+
+.clip {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    transition: .2s;
+}
+
+.clip.activo{
+    transition-delay: .2s;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.clip video {
+    max-width: 900px;
+    outline: none;
+    border: 5px solid #fff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.clip .close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff ;
+}
+
+.volverHome {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cajaLink {
+    width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 5px 10px;
+    background-color: #000;
+}
+
+
+.volverHome a {
+    margin: auto;
+    font-size: 2em;
+    color: #fff;
+    text-decoration: underline white!important;
+}
+ 
+
+.volverHome a:hover {
+    text-decoration: underline rgba(52, 100, 190, 0.903)!important;
+    color: rgba(52, 100, 190, 0.903);
+}
+
+.cajaGiff{
+    width: 100%;
+    height: 100vh;
+}
+
+.cajaGifSCroll {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+lottie-player{
+    color:#000;
+}
+
+  #imageoriginal{
+    display: none;
+    position:fixed;
+    width: 100%!important;
+    top: 0px;
+    left: 0px;
+  }
+  #imageoriginal.active{
+    display: inline-block;
+    z-index: -11;
+  }
+
+.contimages img{
+    position:fixed;
+    width: 100%!important;
+    display: none;
+}
+contimages.disable_image{
+    z-index:inherit;
+}
+.contimages img.active{
+    z-index:-10;
+    display: inline-block;
+}
+
+
+/*============================================================================*/
+/* -------- SECCIÓN BARRA DE NAVEGACION DEL RECORRIDO NUEVA ALIANZA ----------*/
+.banner_botonera {
+    position: fixed;
+    width: 100vw!important;
+    height: 33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 3;
+    bottom: -130px;
+    transition: .8s;
+    /* background-color: yellow; */
+}
+
+.banner_botonera:hover {
+    bottom: -3px;
+    transition: .8s;
+}
+
+.cajas_banner_botonera {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* background-color: tomato; */
+}
+
+.caja_botones img {
+    width: 95%;
+}
+/* -------- SECCIÓN BARRA DE NAVEGACION DEL RECORRIDO NUEVA ALIANZA END ------*/
+/*============================================================================*/
+
+@media only screen and (min-width: 319px) and (max-width: 620px) {
+    .contenedor_transmedia {
+        width: 100%;
+        justify-content: center;
+    }
+    .contenedor_Navegador {
+        width: 100%;
+        height: 60px;
+        margin-top: 30px!important;
+        /* background-color: blueviolet; */
+    }
+    .contenedor_nav {
+        width: 100%;
+        margin-left: -10px!important;
+    }
+    .cajaLogo {
+        display: none;
+    }
+    nav {
+        width: 100%;
+        /* background-color: burlywood; */
+    }
+    nav label {
+        width: 115px;
+        justify-content: center;
+        /* background-color: brown; */
+    }
+    nav label a {
+        font-size: 1.5em;
+    }    
+}
