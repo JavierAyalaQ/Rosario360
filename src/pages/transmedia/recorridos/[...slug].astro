@@ -2,7 +2,7 @@
 import LayoutTransmedia from "@layouts/LayoutTransmedia.astro";
 
 import recorridos from "@data/recorridos.json";
-import Recorrido from "@components/sections/Recorrido.tsx";
+import Rutas from "@components/sections/Rutas.tsx";
 import RecorridoImagenes from "@components/sections/RecorridoImagenes.tsx";
 
 
@@ -26,21 +26,7 @@ if (!place) {
     throw new Error(`Lugar con Slug: ${slug} no encontrado`);
 }
 const { id, name, description, image } = place;
-
-
-
-
-const videoOptions = 
-[
-    {
-        label: "vid", 
-        src: "./public/vid/video-sra.mp4"
-    },
-    {
-        label: "vid", 
-        src: "./public/vid/video-sra.mp4"
-    },
-];
+
 
 import bgIntro from "@vid/bg-intro.mp4";
 
@@ -51,12 +37,23 @@ import cultura from "@data/cultura.json";
 
 const frames = cultura.map(({ href }) => href);
 
+
+
+const routes = [
+  { label: "Ruta 1", src: frames },
+  { label: "Ruta 2", src: frames },
+  { label: "Ruta 3", src: frames },
+  { label: "Ruta 4", src: frames },
+  { label: "Ruta 4", src: frames },
+];
 ---
 
 <LayoutTransmedia title={`Recorrido: ${name}`}>
     <slot slot="main" >
         <!-- <Recorrido client:visible videoSrc={bgIntro} videoOptions={videoOptions} frameDelay={250} />
  -->
-        <RecorridoImagenes client:visible frames={frames} frameRate={30} frameDelay={250} />
+       <RecorridoImagenes client:visible frames={frames} frameRate={30} frameDelay={250} />
+
+       <!-- <Rutas client:visible frames={frames} routes={routes} frameRate={30} frameDelay={500} /> -->
     </slot>
 </LayoutTransmedia>
