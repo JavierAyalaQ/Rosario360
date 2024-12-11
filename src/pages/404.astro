@@ -1,5 +1,7 @@
 ---
 import SectionContainer from "@components/wrappers/SectionContainer.astro"
+
+import logo from "@img/logo.png";
 ---
 <html lang="es">
 	<head>
@@ -21,7 +23,7 @@ import SectionContainer from "@components/wrappers/SectionContainer.astro"
 	</head>
 	<body class="text-gray-800 bg-neutral-100 dark:bg-neutral-900 dark:text-neutral-100 ">
         <main class="grid h-screen px-4 m-auto max-w-7xl place-content-center">
-            <img src="/public/img/logo-verde.png" alt="" class="w-48 max-w-full mx-auto">
+            <img src={logo.src} alt="" class="w-48 max-w-full mx-auto">
             <div class="flex flex-col items-center justify-center">
                 <h1 class="text-5xl font-bold text-red-800">404</h1>
                 <p class="mt-4 text-xl">Lo sentimos, la página que buscas no existe.</p>

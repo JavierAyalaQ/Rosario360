@@ -112,12 +112,6 @@ const RecorridoNuevo: React.FC<RecorridoNuevoProps> = ({
         controls={false}
       ></video>
       <p className="mt-4 text-white text-lg">Frame Actual: {currentFrame}</p>
-      <button
-        className="mt-4 px-4 py-2 text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        onClick={() => setIsPaused((prev) => !prev)}
-      >
-        {isPaused ? "Reanudar" : "Pausar"}
-      </button>
 
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">

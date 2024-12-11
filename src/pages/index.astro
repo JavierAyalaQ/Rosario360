@@ -1,30 +1,19 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/wrappers/SectionContainer.astro";
 
 import CarouselR from "@components/sections/CarouselR.tsx";
 import PlacesR from "@components/sections/PlacesR.tsx";
-import Presentation from "@components/sections/Presentation.astro";
-import Map from "@components/sections/Map.astro";
-
-
-import Creators from "@components/sections/Creators.astro";
-
-import TitleH2 from "@components/texts/TitleH2.astro";
-import SectionContainer from "@components/wrappers/SectionContainer.astro";
-import Testimonials from "@components/sections/Testimonials.astro";
 import Hotels from "@components/sections/Hotels.astro";
 import History from "@components/sections/History.astro";
-import Plans from "@components/sections/Plans.astro";
 ---
 
 <Layout title="Rosario360, Villa del Rosario desde sus sabores, historia y hospitalidad">
 	<CarouselR client:visible  />
-	<SectionContainer classList="border-y border-neutral-900/10 dark:border-neutral-100/10">
+	<SectionContainer classList="border-t border-neutral-900/10 dark:border-neutral-100/10">
 		<PlacesR client:load />
 	</SectionContainer>
 
-	<Presentation />
 	<Hotels />
 	<History />
-	<Map />
 </Layout>

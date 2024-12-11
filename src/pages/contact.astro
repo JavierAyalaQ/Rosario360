@@ -1,28 +1,16 @@
 ---
-
 import Layout from "@layouts/Layout.astro";
 import Form from "@components/forms/Form.astro";
+import TitleH1 from "@components/texts/TitleH1.astro";
+import SectionContainer from "@components/wrappers/SectionContainer.astro";
 
-import RecorridoImagenes from "@components/sections/RecorridoImagenes.tsx";
-
-
-
-import fs from 'fs';
-import path from 'path';
-
-// Ruta de los frames
-const framesDir = path.resolve('./public/img/recorridos/prueba');
-
-// Obtener los nombres de los archivos
-const frameFiles = fs.readdirSync(framesDir).filter((file: string) => file.endsWith('.png'));
-
-// Crear rutas relativas
-const frames = frameFiles.map((file: string) => `./public/img/recorridos/prueba/${file}`);
 ---
 
 
 <Layout title="Contáctanos">
-    <RecorridoImagenes client:visible frames={frames} frameRate={60} />
-
+    <SectionContainer marginY="my-20">
+        <TitleH1 title="Contáctanos" />
+        <h3 class="text-2xl italic font-bold mt-6 mb-4">Si quieres saber como puedes colaborar con nosotros</h3>
+    </SectionContainer>
     <Form />
 </Layout>

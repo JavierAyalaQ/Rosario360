@@ -81,6 +81,11 @@ const FramePlayer: React.FC<FramePlayerProps> = ({ frames, frameRate = 30, frame
     };
   }, [currentFrameIndex, lastFrameUpdate]);
 
+
+
+
+
+
   return (
     <div
       onWheel={handleScroll}
@@ -95,6 +100,8 @@ const FramePlayer: React.FC<FramePlayerProps> = ({ frames, frameRate = 30, frame
         className="w-full max-w-3xl rounded-lg shadow-lg"
       />
       <p className="mt-4 text-white text-lg">Frame Actual: {currentFrameIndex + 1}/{totalFrames}</p>
+
+
     </div>
   );
 };

@@ -6,9 +6,9 @@ import 'swiper/css/autoplay';
 import { Navigation, Autoplay } from "swiper/modules";
 
 
-import placesData from "@data/placesData.json";
+import recorridos from "@data/recorridos.json";
 
-const slides = placesData.map(({ image, name, slug }) => {
+const slides = recorridos.map(({ image, name, slug }) => {
     return {
         slug: slug,
         src: image,

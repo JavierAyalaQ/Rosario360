@@ -12,6 +12,7 @@
       "@assets/*": ["src/assets/*"],
       "@img/*": ["public/img/*"],
       "@vid/*": ["public/vid/*"],
+      "@cultura/*0": ["public/img/recorridos/cultura/*"] 
     }
   }
 }

@@ -115,10 +115,10 @@ const VideoSlider: React.FC = () => {
           Desde sus sabores, historia y hospitalidad
         </span></h1>
         <div className="flex flex-col md:flex-row gap-12 md:gap-6">
-          <a href="#" className="button font-semibold bg-green-500 hover:bg-green-600 text-green-950 px-4 py-2 rounded transition-colors">
+          <a href="/transmedia" className="button font-semibold bg-green-500 hover:bg-green-600 text-green-950 px-4 py-2 rounded transition-colors">
             Empezar ahora
           </a>
-          <a href="#" className="button font-semibold bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded transition-colors">
+          <a href="/bic/" className="button font-semibold bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded transition-colors">
             Conoce más
           </a>
         </div>
