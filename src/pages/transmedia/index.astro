@@ -16,7 +16,9 @@ import videoSr from "@vid/bg-intro.mp4";
         <button id="fullscreenBtn" class="absolute top-20 right-4 md:right-20 z-10 bg-black text-white rounded-full shadow-md hover:bg-white hover:text-black transition-colors duration-300 hover:opacity-80">
             <i class="fa-solid fa-expand text-inherit p-2"></i>
         </button>
-        <video src={videoSr} class="w-full h-full pointer-events-none object-cover -z-10" autoplay loop muted>Tu navegador no puede reproducir el elemento de video</video>
+
+        <video src={videoSr} class="w-full h-full pointer-events-none object-cover -z-10 min-h-screen" autoplay loop muted>Tu navegador no puede reproducir el elemento de video</video>
+
     </slot>
 </LayoutTransmedia>
 
