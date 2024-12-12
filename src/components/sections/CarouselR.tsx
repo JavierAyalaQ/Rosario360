@@ -75,7 +75,7 @@ const VideoSlider: React.FC = () => {
   };
 
   return (
-    <div className="mt-8 mb-20 overflow-hidden rounded-xl relative w-full min-h-[720px]">
+    <div className="md:mt-8 md:mb-20 overflow-hidden rounded-xl relative w-full min-h-[720px]">
       {/* Slider Videos */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none h-[720px]">
         {videos.map((video, index) => (
