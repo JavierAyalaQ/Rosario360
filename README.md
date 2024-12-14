@@ -1,57 +1,64 @@
 # Rosario360
 
-## Description
+Rosario360 es una página web desarrollada con el objetivo de promover el turismo, la historia, la gastronomía y la cultura del municipio de Villa del Rosario, ubicado en Norte de Santander, Colombia. Este proyecto pone especial énfasis en destacar los Bienes de Interés Cultural del municipio, convirtiéndose en una herramienta moderna y única en el sector turístico local.
 
-Rosario360 is a study project designed to promote tourism in Villa del Rosario. Built using Astro, Tailwind CSS, FontAwesome, and many other tools, this project aims to showcase the city's attractions and enhance its online presence.
+---
 
-## 🚀 Getting Started
+## Equipo de Desarrollo
 
-1. **Clone the Repository:**
+Este proyecto ha sido creado por el equipo de **Rosario360**, conformado por:
+- **Miguel Silva**
+- **Diego Ayala**
+- **Javier Ayala**
 
-   ```bash
-   git clone https://github.com/yourusername/rosario360.git
-   ```
+---
 
-2. **Install Dependencies:**
+## Tecnologías Utilizadas
 
-   ```bash
-   cd rosario360
-   npm install
-   ```
+Rosario360 se desarrolló con las siguientes tecnologías:
+- **Astro**: Framework principal utilizado para la estructura del sitio.
+- **React**: Integración de componentes interactivos.
+- **Tailwind CSS**: Framework para el diseño moderno y responsivo.
 
-3. **Run the Development Server:**
+Estas herramientas aseguran una experiencia de usuario fluida y un diseño visual atractivo, acorde con los estándares actuales.
 
-   ```bash
-   npm run dev
-   ```
+---
 
-   Visit `http://localhost:4321` in your browser to see the project in action.
+## Objetivo
 
-4. **Build for Production:**
+Rosario360 tiene como misión:
+- Impulsar el turismo en Villa del Rosario.
+- Mostrar y preservar la rica historia y cultura del municipio.
+- Resaltar la gastronomía local.
+- Promover los Bienes de Interés Cultural y su importancia.
 
-   ```bash
-   npm run build
-   ```
+Con un enfoque innovador, Rosario360 busca posicionarse como una referencia para el turismo local y regional.
 
-5. **Preview the Production Build:**
+---
 
-   ```bash
-   npm run preview
-   ```
+## Características
 
-## License
+- **Modernidad:** Diseño y funcionalidad a la vanguardia tecnológica.
+- **Innovación:** Un proyecto único en su tipo en el municipio.
+- **Accesibilidad:** Optimizado para dispositivos móviles y navegadores modernos.
 
-This project is licensed under the GNU Public License - see the [LICENSE](LICENSE) file for details.
+---
 
-## Contributing
+## Licencia
 
-As this is a study project, contributions are currently not being accepted. However, feedback is welcome!
+Actualmente, Rosario360 está bajo la licencia **GNU General Public License (GPL)**. Sin embargo, se está considerando un cambio a una licencia más restringida de **Creative Commons**, que limitará su uso y modificación sin el permiso de sus creadores.
 
-```
+---
 
-### Summary of Changes
-- **Project Name**: Updated to "Rosario360."
-- **Repository URL**: Changed to reflect the new project name (replace `yourusername` with your actual GitHub username).
-- **Description**: Tailored to reflect the focus on promoting tourism in Villa del Rosario.
+## Feedback y Contacto
 
-Feel free to make further adjustments as needed!
+Aunque este proyecto no admite contribuciones públicas en GitHub, el equipo está abierto a recibir feedback, sugerencias o cualquier tipo de acercamiento. Si deseas comunicarte con nosotros, puedes hacerlo a través de:
+- [Correo Electrónico: rosario360@gmail.com](mailto:rosario360@gmail.com)
+- [Redes Sociales](#) (próximamente)
+
+---
+
+## Reconocimientos
+
+Rosario360 se destaca por su enfoque innovador y por ser pionero en el sector turístico de Villa del Rosario. Estamos comprometidos en contribuir al desarrollo cultural y económico del municipio, promoviendo su riqueza histórica y cultural de una manera accesible y moderna.
+
