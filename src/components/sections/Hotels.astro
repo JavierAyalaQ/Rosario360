@@ -1,0 +1,52 @@
+---
+import TitleH2 from "@components/texts/TitleH2.astro";
+import SectionContainer from "@components/wrappers/SectionContainer.astro";
+
+import villaPrada from "@img/villa-prada.jpg";
+import yesmijavier from "@img/yesmijavier.jpg";
+import elCastillo from "@img/el-castillo.jpg";
+import villaAntigua from "@img/hotel-villa-antigua.jpg";
+---
+
+<SectionContainer marginY="my-20" classList="border-t border-neutral-900/10 dark:border-neutral-100/10">
+    <TitleH2 title="Donde alojarse" classList="mt-32"/>
+    <p>Esta sección podria usar bento grids</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-12">
+        <div class="relative lg:col-span-1 aspect-square">
+            <img src={villaPrada.src} alt="Imagen de Hotel Villa Prada" class="aspect-square lg:aspect-square max-w-full object-cover rounded">
+            <div class="absolute text-white bg-black/25 top-0 right-0 p-4 w-full">
+                <h5 class="text-xl font-semibold mt-6">
+                    Motel Villa Prada
+                </h5>
+                <p>Cl. 5 #9-43, Villa Del Rosario</p>
+            </div>
+        </div>
+        <div class="relative lg:col-span-2 aspect-[2/1]">
+            <img src={yesmijavier.src} alt="Imagen de Hotel YesmiJavier" class="aspect-square lg:aspect-[2/1] max-w-full w-full object-cover rounded">
+            <div class="absolute text-white bg-black/25 top-0 right-0 p-4 w-full">
+                <h5 class="text-xl font-semibold mt-6">
+                    Hotel Yesmijavier
+                </h5>
+                <p>Cl. 2 #6-2 a 6-74, Villa Del Rosario</p>
+            </div>
+        </div>
+        <div class="relative lg:col-span-2">
+            <img src={elCastillo.src} alt="Imagen de Motel El Castillo" class="aspect-square lg:aspect-[2/1] max-w-full w-full object-cover rounded">
+            <div class="absolute text-white bg-black/25 top-0 right-0 p-4 w-full">
+                <h5 class="text-xl font-semibold mt-6">
+                    Motel El Castillo
+                </h5>
+                <p>Cl. 7, Villa Del Rosario</p>
+            </div>
+        </div>
+        <div class="relative lg:col-span-1 aspect-square">
+            <img src={villaAntigua.src} alt="Imagen de Hotel Villa Antigua" class="aspect-square lg:aspect-square max-w-full object-cover rounded">
+            <div class="absolute text-white bg-black/25 top-0 right-0 p-4 w-full">
+                <h5 class="text-xl font-semibold mt-6">
+                    Hotel Villa Antigua
+                </h5>
+                <p>Autopista Internacional Vía San Antonio, Villa Del Rosario, Cúcuta, Norte de Santander</p>
+            </div>
+        </div>
+    </div>
+</SectionContainer>

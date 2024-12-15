@@ -1,0 +1,102 @@
+---
+import LayoutTransmedia from "@layouts/LayoutTransmedia.astro";
+
+import recorridos from "@data/recorridos.json";
+import Rutas from "@components/sections/Rutas.tsx";
+import BicSlider from "@components/sections/BicSlider.tsx";
+
+export function getStaticPaths() {
+    const places = recorridos;
+    return recorridos.map(({ slug }) => ({
+        params: { slug },
+        props: { places },
+    }));
+}
+
+const { slug } = Astro.params;
+
+// Navegación
+const place = recorridos.find((p) => p.slug === slug);
+
+if (!place) {
+    throw new Error(`Lugar con Slug: ${slug} no encontrado`);
+}
+const { id, name, description, image } = place;
+
+
+
+const hrefs = [
+    {
+        href: "/transmedia/recorridos/casa-natal-del-general-francisco-de-paula-santander",
+    },
+    { href: "/transmedia/recorridos/parroquia-nuestra-senora-del-rosario" },
+    { href: "/transmedia/recorridos/la-bagatela" },
+    { href: "/transmedia/recorridos/casa-de-la-cultura" },
+    { href: "/transmedia/recorridos/ruinas-de-la-capilla-de-santa-ana" },
+];
+
+import museo from "@data/museo.json";
+import bagatela from "@data/bagatela.json";
+import iglesia from "@data/iglesia.json";
+import ferrocarril from "@data/ferrocarril.json";
+import estatua from "@data/estatua.json";
+
+const framesMuseo = museo.map(({ href }) => href);
+const framesIglesia = iglesia.map(({ href }) => href);
+const framesBagatela = bagatela.map(({ href }) => href);
+const framesFerrocarril = ferrocarril.map(({ href }) => href);
+const framesEstatua = estatua.map(({ href }) => href);
+
+const rutas = recorridos.map(({ name }) => name);
+const routes = [
+    { label: rutas[0], src: framesMuseo, href: hrefs[0].href },
+    { label: rutas[1], src: framesIglesia, href: hrefs[2].href },
+    { label: rutas[2], src: framesBagatela, href: hrefs[1].href },
+    { label: rutas[3], src: framesFerrocarril, href: hrefs[3].href },
+    { label: rutas[4], src: framesEstatua, href: hrefs[4].href },
+];
+---
+
+<LayoutTransmedia title={`Recorrido: ${name}`}>
+    <slot slot="main">
+        <section>
+            <Rutas
+                client:visible
+                frames={routes[id - 1].src}
+                routes={routes}
+                frameRate={30}
+                frameDelay={200}
+            />
+        </section>
+
+        <a href="/transmedia" class="absolute top-32 right-4 md:right-20 z-10 bg-black text-white rounded-full shadow-md hover:bg-white hover:text-black transition-colors duration-300 hover:opacity-80">
+            <i class="fa-solid fa-home text-inherit p-2"></i>
+        </a>
+        <button id="fullscreenBtn" class="absolute top-20 right-4 md:right-20 z-10 bg-black text-white rounded-full shadow-md hover:bg-white hover:text-black transition-colors duration-300 hover:opacity-80">
+            <i class="fa-solid fa-expand text-inherit p-2"></i>
+        </button>
+
+        <aside
+            class="flex justify-center items-center absolute bottom-0 left-0 w-full z-0"
+        >
+            <BicSlider client:visible />
+        </aside>
+    </slot>
+</LayoutTransmedia>
+
+<script is:inline>
+    document.addEventListener("astro:page-load", () => {
+        const fullscreenBtn = document.getElementById("fullscreenBtn");
+        let isFullscreen = false;
+
+        fullscreenBtn.addEventListener("click", () => {
+            if (isFullscreen === true) {
+                document.exitFullscreen();
+                !isFullscreen;
+            } else {
+                document.documentElement.requestFullscreen();
+                !isFullscreen;
+            }
+        });
+    });
+</script>
