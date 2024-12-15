@@ -1,1 +1,2 @@
-
+la ruta para que las imagenes se rendericen en netlify es <!--public-->/img/*
+la ruta para que las imagenes se rendericen en localhost es ./public/img/*
