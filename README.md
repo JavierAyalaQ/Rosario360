@@ -53,7 +53,7 @@ Actualmente, Rosario360 está bajo la licencia **GNU General Public License (GPL
 ## Feedback y Contacto
 
 Aunque este proyecto no admite contribuciones públicas en GitHub, el equipo está abierto a recibir feedback, sugerencias o cualquier tipo de acercamiento. Si deseas comunicarte con nosotros, puedes hacerlo a través de:
-- [Correo Electrónico: rosario360@gmail.com](mailto:rosario360@gmail.com)
+- [Correo Electrónico: contacto.rosario360@gmail.com](mailto:contacto.rosario360@gmail.com)
 - [Redes Sociales](#) (próximamente)
 
 ---
