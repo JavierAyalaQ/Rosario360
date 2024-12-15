@@ -35,13 +35,13 @@ const hrefs = [
     { href: "/transmedia/recorridos/ruinas-de-la-capilla-de-santa-ana" },
 ];
 
-import museo from "@data/museo.json";
+import templo from "@data/templo.json";
 import bagatela from "@data/bagatela.json";
 import iglesia from "@data/iglesia.json";
 import ferrocarril from "@data/ferrocarril.json";
 import estatua from "@data/estatua.json";
 
-const framesMuseo = museo.map(({ href }) => href);
+const framesTemplo = templo.map(({ href }) => href);
 const framesIglesia = iglesia.map(({ href }) => href);
 const framesBagatela = bagatela.map(({ href }) => href);
 const framesFerrocarril = ferrocarril.map(({ href }) => href);
@@ -49,7 +49,7 @@ const framesEstatua = estatua.map(({ href }) => href);
 
 const rutas = recorridos.map(({ name }) => name);
 const routes = [
-    { label: rutas[0], src: framesMuseo, href: hrefs[0].href },
+    { label: rutas[0], src: framesTemplo, href: hrefs[0].href },
     { label: rutas[1], src: framesIglesia, href: hrefs[2].href },
     { label: rutas[2], src: framesBagatela, href: hrefs[1].href },
     { label: rutas[3], src: framesFerrocarril, href: hrefs[3].href },
