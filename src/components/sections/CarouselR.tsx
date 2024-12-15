@@ -114,7 +114,7 @@ const VideoSlider: React.FC = () => {
         <span className="text-lg mb-4 pointer-events-none font-normal">
           Desde sus sabores, historia y hospitalidad
         </span></h1>
-        <div className="flex flex-col md:flex-row gap-12 md:gap-6">
+        <div className="flex flex-col md:flex-row mt-6 md:mt-0 gap-6">
           <a href="/transmedia" className="button font-semibold bg-green-500 hover:bg-green-600 text-green-950 px-4 py-2 rounded transition-colors">
             Empezar ahora
           </a>
