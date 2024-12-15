@@ -4,7 +4,7 @@
         "slug": "templo-historico",
         "name": "Templo Historico",
         "description": "Fue la casa donde nació el prócer de nuestra independencia, Francisco de Paula Santander el 2 de abril de 1792. Allí vivió sus primeros años de vida hasta 1.805 cuando se fue a Bogotá a continuar con sus estudios. Fue declarada Monumento Nacional mediante la Ley 164 del 30 de diciembre de 1.959.",
-        "image": "/public/img/bic/templo-historico.jpg",
+        "image": "/img/bic/templo-historico.jpg",
         "href": "#"
     },
     {
@@ -12,7 +12,7 @@
         "slug": "parroquia-nuestra-senora-del-rosario",
         "name": "Parroquia Nuestra Señora del Rosario",
         "description": "Está en la calle 6 con carrera 7. Fue construida el 17 de febrero de 1.772 por el padre Marco Antonio Mora, en cuyo sagrado recinto se encuentra el lienzo con la imagen de Nuestra Señora del Rosario y las campanas que llamaron a la misa del Espíritu Santo, el 6 de mayo de 1.821 en la instalación del Primer Congreso General de la República.",
-        "image": "/public/img/bic/parroquia-nuestra-senora-del-rosario.jpg",
+        "image": "/img/bic/parroquia-nuestra-senora-del-rosario.jpg",
         "href": "#"
     },
     {
@@ -20,7 +20,7 @@
         "slug": "la-bagatela",
         "name": "La Bagatela",
         "description": "Ubicada en la calle 8 con Autopista Internacional, construida a mediados del siglo XVIII. En esta casa, el 27 de mayo de 1780 nació Pedro Fortoul, prócer de la Independencia.",
-        "image": "/public/img/bic/la-bagatela.jpg",
+        "image": "/img/bic/la-bagatela.jpg",
         "href": "#"
     },
     {
@@ -28,7 +28,7 @@
         "slug": "estacion-del-ferrocarril-k-14",
         "name": "Estación del Ferrocarril K-14",
         "description": "Ubicada en la calle 7 con Autopista Internacional. Pertenecía a la línea La Frontera que inició en 1893, la cual partía de la Estación Rosetal en San José de Cúcuta, pasaba por San Luis, Escobal, Boconó, Lomitas Vieja, Villa del Rosario y la Frontera.",
-        "image": "/public/img/bic/estacion-del-ferrocarril-k-14.jpg",
+        "image": "/img/bic/estacion-del-ferrocarril-k-14.jpg",
         "href": "#"
     },
     {
@@ -36,7 +36,7 @@
         "slug": "estatua-del-general-santander",
         "name": "Estatua del General Santander",
         "description": "Está ubicada al extremo del Complejo Histórico. La estatua fue inaugurada en 1.985 y se encuentra fundida en bronce bajo la técnica de maqueta, llegando a medir unos nueve metros de altura y contando con un peso aproximado a las seis toneladas.",
-        "image": "/public/img/bic/estatua-del-general-santander.jpg",
+        "image": "/img/bic/estatua-del-general-santander.jpg",
         "href": "#"
     }
 ]
