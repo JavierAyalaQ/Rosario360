@@ -129,8 +129,7 @@ import logo from "@img/logo.png";
 
 
 <!-- Navbar Colors -->
-<script>
-    document.addEventListener('astro:page-load', () => {
+<script data-astro-rerun >
         function updateNavLinks() {
             const currentPath = window.location.pathname;
             const navLinks = document.querySelectorAll('.nav-link');
@@ -160,8 +159,7 @@ import logo from "@img/logo.png";
         };
         updateNavLinks();
         window.addEventListener('popstate', updateNavLinks);
-        window.addEventListener('resize', updateNavLinks);
-    });
+        window.addEventListener('resize', updateNavLinks);
 </script>
 
 
