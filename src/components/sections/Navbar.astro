@@ -43,7 +43,7 @@ import logo from "@img/logo.png";
                     <NavbarLink href="/contact" body="Contáctanos" />
                 </li>
                 <li>
-                    <button id="dropdownNavbarButton" data-dropdown-toggle="dropdownNavbar" class="relative flex items-center justify-between w-full px-3 py-2 text-gray-700 transition-colors duration-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-300 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                    <button id="dropdownNavbarButton" data-dropdown-toggle="dropdownNavbar" class="relative flex items-center justify-between w-full px-3 py-2 text-gray-700 transition-colors duration-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-600 md:p-0 md:w-auto dark:text-white md:dark:hover:text-green-300 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                     >
                         Asociados
                         <i class="ml-2 fa-solid fa-chevron-down text-md"></i>
@@ -59,7 +59,7 @@ import logo from "@img/logo.png";
                                 <NavbarDropdownLink href="#" body="AgroVilla" />
                             </li>
                             <li>
-                                <NavbarDropdownLink href="/associated/villa-gourmet" body="Villa Gourmet" /> 
+                                <NavbarDropdownLink href="#" body="Villa Gourmet" /> 
                             </li>
                             <li>
                                 <NavbarDropdownLink href="#" body="Villa Empress" />
@@ -67,7 +67,7 @@ import logo from "@img/logo.png";
                         </ul>
                         <div class="py-1">
                             <a
-                                href="#"
+                                href="/login"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                             >
                                 Registrarse
@@ -129,7 +129,8 @@ import logo from "@img/logo.png";
 
 
 <!-- Navbar Colors -->
-<script data-astro-rerun >
+<script>
+    document.addEventListener('astro:after-swap', () => {
         function updateNavLinks() {
             const currentPath = window.location.pathname;
             const navLinks = document.querySelectorAll('.nav-link');
@@ -149,17 +150,18 @@ import logo from "@img/logo.png";
             // Desktop styling
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === currentPath && window.innerWidth >= 768) {
-                    link.classList.add('md:text-green-700');
+                    link.classList.add('md:text-green-600');
                     link.classList.add('md:dark:text-green-300');
                 } else {
-                    link.classList.remove('md:text-green-700');
+                    link.classList.remove('md:text-green-600');
                     link.classList.remove('md:dark:text-green-300');
                 }
             });
         };
         updateNavLinks();
         window.addEventListener('popstate', updateNavLinks);
-        window.addEventListener('resize', updateNavLinks);
+        window.addEventListener('resize', updateNavLinks);
+    });
 </script>
 
 
